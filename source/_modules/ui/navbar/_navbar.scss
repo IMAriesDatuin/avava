@@ -57,7 +57,7 @@ $navbar-options: (
 		background-alt-color: transparent,
 		background-active-color: transparent, // Set the active state color when the menu is open.
 
-		size: 0.5em, // Set the size of the menu toggle icon.
+		size: 0.3em, // Set the size of the menu toggle icon.
 		thickness: 0.25em, // Defines the thickness of lines.
 		radius: 0, // Defines the roundness of lines.
 		duration: 200ms, // Set the duration of the animation.
@@ -458,14 +458,14 @@ $navbar-options: (
 				cursor: pointer;
 				overflow: hidden;
 				padding: {
-					left: 2rem;
-					right: 3rem;
+					left: 1rem;
+					right: 1rem;
 				}
 				width: 100%;
 				color: map-get(map-get($navbar-options, menu-toggle), color);
 				font: map-get(map-get($navbar-options, menu-toggle), font);
-				font-size: 1em;
-				letter-spacing: 0.125em;
+				font-size: 0.825em;
+				letter-spacing: normal;
 				text-align: right;
 				text-overflow: ellipsis;
 				white-space: nowrap;

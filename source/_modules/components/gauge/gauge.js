@@ -94,14 +94,15 @@ var gauge = (function gauge($, window, document, undefined) {
 			threshold: 0,
 			//thresholds: '0% 0% 0% 0%', // top, right, bottom, left
 			//load_delay: 100,
-			auto_unobserve: false,
+			auto_unobserve: true,
 			use_native: false,
 
 			callback_enter: function(element) {
 
 				//console.log('Entered the viewport', element);
 				$(element).addClass('in-view');
-				
+
+				//Tween.delayedCall(5, gauge.setValueAnimated, [value, 1] );
 				gauge.setValueAnimated(value, 1);
 
 			},

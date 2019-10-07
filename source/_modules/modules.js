@@ -69,7 +69,7 @@ var modules = (function modules($, window, document, undefined) {
 		//pageTracking.init();
 		pageVisibility.init();
 		print.init();
-		//randomProps.init();
+		randomProps.init();
 		//skewScroll.init();
 		//tilt.init();
 		//water.init();
