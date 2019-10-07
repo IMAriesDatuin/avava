@@ -1,0 +1,147 @@
+---
+layout: default
+title: Leadership
+assets: assets/
+---
+
+
+<!-- {{ page }} -->
+
+
+<!-- SECTION: HERO -->
+<section id="welcome" class="hero-simple grid-x align-bottom align-center no-gutter no-selection" role="banner">
+
+
+	<!-- HEADLINE -->
+	<div class="hero-simple-text-block text-block io">
+
+
+		<!-- COPY -->
+		<h1 class="headline io-hadline">
+			<span class="headline-subtitle hide-mobile-portrait"><a href="#avava-leadership">AVAVA Leadership</a></span>
+			<span class="headline-title text-medium">Management</span>
+		</h1>
+		<!-- // COPY -->
+
+
+		{{> block-cap-bottom}}
+
+
+	</div>
+	<!-- // HEADLINE -->
+
+
+	<!-- BACKGROUND -->
+	<div class="hero-simple-background lazy-load lax" data-bg=" url( {{ root }}{{ assets }}images/shutterstock_1293049414.jpg )" data-lax-opacity="0 1, vh 0 | loop=0 offset=0 speed=1" data-lax-grayscale="0 0, vh 100 | loop=0 offset=0 speed=1"></div>
+	<!-- // BACKGROUND -->
+
+
+</section>
+<!-- // SECTION: HERO -->
+
+
+
+
+
+<!-- SECTION: AVAVA LEADERSHIP -->
+<section id="avava-leadership" class="overflow-hidden background-primary">
+
+
+	<!-- HEADLINE -->
+	<div class="text-block text-center center-auto width-75 width-100-mobile-both z-2">
+
+
+		<!-- COPY -->
+		<h2 class="headline">AVAVA Leadership</h2>
+		<p class="text-white">AVAVA’s leadership ensures we are poised for success. Each member of our management team is a pioneer and innovator in their field — and with passion, diverse expertise and a track record of successful ventures, our leaders have the drive and the experience to make AVAVA the next revolution in skin treatments.</p>
+		<!-- // COPY -->
+
+
+		<!-- DIVIDER -->
+		<hr class="hr-secondary-lr width-75 width-100-mobile-both">
+		<!-- // DIVIDER -->
+
+
+	</div>
+	<!-- // HEADLINE -->
+
+
+	<!-- DIRECTORY -->
+	<div class="grid-x align-stretch align-left small-up-1 medium-up-1 large-up-2 center-auto position-relative width-75 width-100-mobile-to-tablet-both z-2">
+
+
+		{{#each leadership.content}}
+		<!-- BLOCK -->
+		<div id="{{ id }}" class="cell media-object stack-for-small">
+
+
+				<!-- IMAGE -->
+				<div class="media-object-section">
+
+					<div class="thumbnail">
+						<picture>
+							<source type="image/webp" data-srcset="{{ root }}{{ assets }}{{ webp }}">
+							<img data-src="{{ root }}{{ assets }}{{ image }}" class="lazy-load" alt="{{ name }}/{{ title }}">
+						</picture>
+					</div>
+
+				</div>
+				<!-- // IMAGE -->
+
+
+				<!-- BLOCK -->
+				<div class="media-object-section grid-x align-top">
+
+
+					<!-- COPY -->
+					<h3 class="headline cell">
+						<span class="headline-title">{{ name }}</span>
+						<span class="headline-subtitle">{{ title }}</span>
+					</h3>
+					<p class="text-white cell">{{ copy }}</p>
+					<!-- // COPY -->
+
+
+					<!-- SOCIAL -->
+					<ul class="social cell align-self-bottom">
+
+						{{#each social}}
+						<li>
+
+							<a href="{{ link }}" target="_blank" aria-label="{{ icon }}">
+								<span class="fab fa-{{ icon }}" aria-hidden="true"></span>
+							</a>
+
+						</li>
+						{{/each}}
+
+					</ul>
+					<!-- // SOCIAL -->
+
+
+				</div>
+				<!-- // BLOCK -->
+
+
+		</div>
+		<!-- // BLOCK -->
+		{{/each}}
+
+
+	</div>
+	<!-- // DIRECTORY -->
+
+
+	<!-- BACKGROUND -->
+	<div class="position-absolute top left background background-auto background-center background-no-repeat fade-primary-full motion motion-fade-in-out io lazy-load z-1" data-bg=" url( {{ root }}{{ assets }}hex-background-vertical.png )"></div>
+	<!-- // BACKGROUND -->
+
+
+</section>
+<!-- // SECTION: AVAVA LEADERSHIP -->
+
+
+{{> join-our-team}}
+
+
+<!-- {{ page }} -->

@@ -1,0 +1,43 @@
+
+# CONTENT
+content:
+ -
+  id: 'home'
+  title: 'Home'
+  description: ''
+  link: 'index'
+
+
+ -
+  id: 'vision'
+  title: 'Vision'
+  description: ''
+  link: 'vision'
+
+
+ -
+  id: 'about-us'
+  title: 'About Us'
+  description: ''
+  link: 'about-us'
+
+
+ -
+  id: 'technology'
+  title: 'Technology'
+  description: ''
+  link: 'technology'
+
+
+ -
+  id: 'news'
+  title: 'News'
+  description: ''
+  link: '#'
+
+
+ -
+  id: 'careers'
+  title: 'Careers'
+  description: ''
+  link: 'careers'

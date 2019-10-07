@@ -1,0 +1,101 @@
+{
+	"bundle": "framework",
+	"source": "node_modules/",
+	"files": [
+				"<JQUERY>",
+				">>jquery/dist/jquery.js",
+				"jquery/dist/jquery.slim.js",
+				">>jquery.easing/jquery.easing.js",
+
+
+				"<FOUNDATION: CORE>",
+				"foundation-sites/dist/js/plugins/foundation.core.js",
+				">>what-input/dist/what-input.js",
+
+				"<FOUNDATION: UTILITIES>",
+				">>foundation-sites/dist/js/plugins/foundation.util.box.js",
+				"foundation-sites/dist/js/plugins/foundation.util.imageLoader.js",
+				">>foundation-sites/dist/js/plugins/foundation.util.keyboard.js",
+				"foundation-sites/dist/js/plugins/foundation.util.mediaQuery.js",
+				">>foundation-sites/dist/js/plugins/foundation.util.motion.js",
+				">>foundation-sites/dist/js/plugins/foundation.util.nest.js",
+				">>foundation-sites/dist/js/plugins/foundation.util.timer.js",
+				">>foundation-sites/dist/js/plugins/foundation.util.touch.js",
+				">>foundation-sites/dist/js/plugins/foundation.util.triggers.js",
+
+				"<CFOUNDATION: CONTROLS>",
+				">>foundation-sites/dist/js/plugins/foundation.slider.js",
+
+				"<FOUNDATION: NAVIGATION>",
+				">>foundation-sites/dist/js/plugins/foundation.dropdownMenu.js",
+				">>foundation-sites/dist/js/plugins/foundation.drilldown.js",
+				">>foundation-sites/dist/js/plugins/foundation.accordionMenu.js",
+				">>foundation-sites/dist/js/plugins/foundation.magellan.js",
+
+				"<FOUNDATION: CONTAINERS>",
+				">>foundation-sites/dist/js/plugins/foundation.accordion.js",
+				">>foundation-sites/dist/js/plugins/foundation.dropdown.js",
+				">>foundation-sites/dist/js/plugins/foundation.offcanvas.js",
+				">>foundation-sites/dist/js/plugins/foundation.reveal.js",
+				">>foundation-sites/dist/js/plugins/foundation.tabs.js",
+				">>foundation-sites/dist/js/plugins/foundation.responsiveAccordionTabs.js",
+
+				"<FOUNDATION: MEDIA>",
+				">>foundation-sites/dist/js/plugins/foundation.orbit.js",
+				">>foundation-sites/dist/js/plugins/foundation.tooltip.js",
+
+				"<FOUNDATION: PLUGINS>",
+				">>foundation-sites/dist/js/plugins/foundation.abide.js",
+				"foundation-sites/dist/js/plugins/foundation.equalizer.js",
+				">>foundation-sites/dist/js/plugins/foundation.interchange.js",
+				">>foundation-sites/dist/js/plugins/foundation.toggler.js",
+				">>foundation-sites/dist/js/plugins/foundation.smoothScroll.js",
+				">>foundation-sites/dist/js/plugins/foundation.sticky.js",
+
+
+				"<SWUP>",
+				"swup/dist/swup.js",
+				">>@swup/body-class-plugin/dist/SwupBodyClassPlugin.js",
+				"@swup/debug-plugin/dist/SwupDebugPlugin.js",
+				"@swup/forms-plugin/dist/SwupFormsPlugin.js",
+				"@swup/ga-plugin/dist/SwupGaPlugin.js",
+				"@swup/gtm-plugin/dist/SwupGtmPlugin.js",
+				">>@swup/head-plugin/dist/SwupHeadPlugin.js",
+				"@swup/js-plugin/dist/SwupJsPlugin.js",
+				"@swup/preload-plugin/dist/SwupPreloadPlugin.js",
+				">>@swup/scripts-plugin/dist/SwupScriptsPlugin.js",
+				"@swup/scroll-plugin/dist/SwupScrollPlugin.js",
+
+
+				"<ANIMATION ENGINE: GSAP (CORE)>",
+				">>gsap/src/uncompressed/TweenLite.js",
+				">>gsap/src/uncompressed/TimelineLite.js",
+				"gsap/src/uncompressed/TweenMax.js",
+				"gsap/src/uncompressed/TimelineMax.js",
+				">>gsap/src/uncompressed/jquery.gsap.js",
+
+				"<ANIMATION ENGINE: GSAP (EASING)>",
+				">>gsap/src/uncompressed/easing/CustomBounce.js",
+				">>gsap/src/uncompressed/easing/CustomEase.js",
+				">>gsap/src/uncompressed/easing/CustomWiggle.js",
+				">>gsap/src/uncompressed/easing/EasePack.js",
+
+				"<ANIMATION ENGINE: GSAP (PLUGINS)>",
+				">>gsap/src/uncompressed/plugins/AttrPlugin.js",
+				">>gsap/src/uncompressed/plugins/BezierPlugin.js",
+				"gsap/src/uncompressed/plugins/ColorPropsPlugin.js",
+				">>gsap/src/uncompressed/plugins/CSSPlugin.js",
+				"gsap/src/uncompressed/plugins/CSSRulePlugin.js",
+				"gsap/src/uncompressed/plugins/DirectionalRotationPlugin.js",
+				">>gsap/src/uncompressed/plugins/EaselPlugin.js",
+				">>gsap/src/uncompressed/plugins/EndArrayPlugin.js",
+				">>gsap/src/uncompressed/plugins/ModifiersPlugin.js",
+				">>gsap/src/uncompressed/plugins/PixiPlugin.js",
+				">>gsap/src/uncompressed/plugins/RaphaelPlugin.js",
+				">>gsap/src/uncompressed/plugins/ScrollToPlugin.js",
+
+				"<ANIMATION ENGINE: GSAP (UTILITIES)",
+				">>gsap/src/uncompressed/utils/Draggable.js"
+			]
+
+}

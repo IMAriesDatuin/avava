@@ -1,0 +1,254 @@
+/* -------------------------------------------------- */
+/* CARD
+/* -------------------------------------------------- */
+
+// OPTIONS
+$card-options: (
+	sizes: (
+		small: 25%,
+		medium: 50%,
+		large: 75%
+	),
+
+	font: $headline,
+
+	width: 400px,
+	height: 100%,
+
+	border-color: $light-gray,
+	border-hover-color: $secondary,
+
+	background-color: $white,
+	background-hover-color: transparent,
+
+	use-shadows: true,
+	drop-shadow-color: $shadow,
+
+	radius: 8px,
+	x: 0,
+	y: -5px,
+	scale: 1,
+	
+	duration: 225ms,
+	delay: 0ms,
+	ease: ease-in-out
+);
+
+
+// MAIN
+.card {
+
+	$self: &;
+
+	@include shadow(
+		$type: 'box-shadow',
+		$color: map-get($card-options, drop-shadow-color),
+		$x: 0,
+		$y: 4px,
+		$blur: 16px,
+		$spread: 0,
+		$alpha: 0.15,
+		$strength: 0, 
+		$inset: false
+	);
+	@include transition(
+		$property: (border, box-shadow, transform),
+		$duration: map-get($card-options, duration),
+		$delay: map-get($card-options, delay),
+		$ease: map-get($card-options, ease),
+		$optimize: false
+	);
+	cursor: pointer;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	max-width: map-get($card-options, width);
+	height: auto;
+	min-height: map-get($card-options, height);
+	border-radius: map-get($card-options, radius);
+	//border: thin solid map-get($card-options, border-color);
+	background: map-get($card-options, background-color);
+	transform: translate3d(0,0,0) scale3d(1,1,1);
+	transform-origin: bottom center;
+
+	&-image {
+
+		position: relative;
+		width: 100%;
+		height: auto;
+		min-height: 300px;
+		border-bottom: thin solid $gray;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+
+		&::before {
+			@include fade(
+				$type: 'bottom',
+				$color: $secondary,
+				$alpha: 1,
+				$scale: 100%,
+				$start: 0%,
+				$stop: 100%,
+				$order: 1,
+				$prefix: '',
+				$suffix: '',
+				$is-fixed: false,
+				$clickable: false
+			);
+			opacity: 0;
+		}
+
+	}
+
+	.text-block {
+
+		.headline {
+			//font-size: 1.5em;
+			text-align: center;
+		}
+
+		p {
+			text-align: center;
+		}
+
+		.button {
+
+		}
+
+	}
+
+	&:hover,
+	&.is-active,
+	&.is-touch {
+
+		@include shadow(
+			$type: 'box-shadow',
+			$color: #38448f,
+			$x: 0,
+			$y: 18px,
+			$blur: 32px,
+			$spread: 0,
+			$alpha: 0.25,
+			$strength: 0,
+			$inset: false
+		);
+		//border: 1px solid rgba($gray, 0);
+		transform:
+			translate3d(map-get($card-options, x), map-get($card-options, y), 0)
+			scale3d(map-get($card-options, scale), map-get($card-options, scale), 1);
+
+		#{$self}-image {
+
+			&::before {
+				opacity: 0.5;
+			}
+
+		}
+
+	}
+
+	@include break($min: 0, $max: $mobile, $orientation: 'portrait') {
+		//height: 300px;
+		//border-radius: 0;
+	}
+
+}
+
+
+// MODIFIERS
+.card {
+
+	$self: &;
+
+	// SIZES
+	&-small {
+
+		width: 100%;
+		max-width: map-get(map-get($card-options, sizes), small);
+
+		@include break($min: $mobile, $max: $laptop, $orientation: '') {
+			max-width: 50%;
+		}
+
+		@include break($min: 0, $max: $mobile, $orientation: 'both') {
+			max-width: 100%;
+		}
+
+	}
+
+	&-medium {
+		width: 100%;
+		max-width: map-get(map-get($card-options, sizes), medium);
+	}
+
+	&-large {
+		width: 100%;
+		max-width: map-get(map-get($card-options, sizes), large);
+	}
+
+	&-full {
+		width: 100%;
+		max-width: 100%;
+	}
+
+	@include break($min: 0, $max: $mobile, $orientation: 'both') {
+
+		&-small,
+		&-medium,
+		&-large {
+			width: 100%;
+			max-width: 100%;			
+		}
+
+		&-expand {
+			margin: {
+				left: auto;
+				right: auto;
+			}
+			width: 100%;
+			max-width: 100%;
+		}
+
+	}
+
+
+	// STATE
+	&.disabled {
+		cursor: not-allowed;
+		pointer-events: none;
+		color: $light-gray;
+		border-color: $gray;
+		background: $gray;
+	}
+
+	@include break($min: 0, $max: $mobile, $orientation: 'both') {
+		margin: {
+			left: auto;
+			right: auto;
+		}
+		width: 100%;
+		max-width: 100%;
+	}
+	
+}
+
+
+// LOGIC
+@if map-get($card-options, use-shadows) == false {
+
+	.card {
+
+		box-shadow: 0;
+		filter: drop-shadow(0 0 0 $shadow);
+
+		&:hover,
+		&.is-active,
+		&.is-touch {
+			box-shadow: 0;
+			filter: drop-shadow(0 0 0 $shadow);
+		}
+
+	}
+
+}

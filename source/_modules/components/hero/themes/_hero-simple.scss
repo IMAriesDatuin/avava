@@ -1,0 +1,228 @@
+/* -------------------------------------------------- */
+/* HERO SIMPLE
+/* -------------------------------------------------- */
+
+// OPTIONS
+$hero-simple-options: (
+	duration: 400ms, // Set the duration of the animation.
+	delay: 0ms, // Delay the animation by this amount. 
+	ease: $easeNatural // Set the easing type for this animation.
+);
+
+
+// MAIN
+.hero-simple {
+
+	$self: &;
+
+	z-index: 3;
+	overflow: hidden;
+	position: relative;
+	margin: {
+		top: 60px;
+		right: auto;
+		bottom: 0;
+		left: auto;
+	};
+	padding-bottom: 200px;
+	width: 100%;
+	height: 50%;
+	min-height: 50vh;
+	background: $primary;
+
+	@include break($min: $tablet, $max: $laptop, $orientation: 'landscape') {
+		height: 75%;
+		min-height: 75vh;
+	}
+
+	@include break($min: $mobile, $max: $tablet, $orientation: 'portrait') {
+		height: 75%;
+		min-height: 75vh;
+	}
+
+	@include break($min: $mobile, $max: $tablet, $orientation: 'landscape') {
+		height: 100%;
+		min-height: 100vh;
+	}
+
+	@include break($min: 0, $max: $mobile, $orientation: 'portrait') {
+		height: 75%;
+		min-height: 75vh;
+	}
+
+	@include break($min: 0, $max: $mobile, $orientation: 'landscape') {
+		height: 100%;
+		min-height: 100vh;
+	}
+
+	&-text-block {
+
+		z-index: 3;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		margin: 0 auto;
+		padding: 0;
+		width: 100%;
+		text-align: center;
+
+		.headline {
+
+			margin: {
+				left: auto;
+				right: auto;
+			}
+			width: 75%;
+			text-transform: uppercase;
+
+			&-title {
+
+			}
+
+			&-subtitle {
+
+				margin-bottom: 2.5rem;
+				padding: 0.25rem;
+
+				a {
+
+					@include transition(
+						$property: (color),
+						$duration: map-get($hero-simple-options, duration),
+						$delay: map-get($hero-simple-options, delay),
+						$ease: map-get($hero-simple-options, ease),
+						$optimize: false
+					);
+					position: relative;
+					padding: {
+						left: 0.5rem;
+						right: 0.5rem;
+					}
+					color: inherit;
+
+					&::after {
+						@include transition(
+							$property: (transform),
+							$duration: map-get($hero-simple-options, duration),
+							$delay: map-get($hero-simple-options, delay),
+							$ease: map-get($hero-simple-options, ease),
+							$optimize: false
+						);
+						content: '';
+						z-index: -1;
+						position: absolute;
+						left: 0;
+						bottom: 0;
+						width: 100%;
+						height: 100%;
+						background: $secondary;
+						transform: scale3d(1,0,1);
+						transform-origin: bottom center;
+					}
+
+					&:hover {
+
+						&::after {
+							transform: scale3d(1,1,1);
+						}
+
+						color: $primary;
+
+					}
+
+				}
+
+				&::before {
+					content: '';
+					z-index: 1;
+					position: absolute;
+					left: 0;
+					bottom: 0;
+					width: 100%;
+					height: 1px;
+					background: radial-gradient(ellipse at center, rgba($secondary, 1) 0%, rgba($secondary, 0) 75%);
+				}
+
+			}
+
+			@include break($min: 0, $max: $mobile, $orientation: 'both') {
+				width: 100%;
+			}
+
+		}
+
+		.block-cap {
+			position: relative;
+		}
+
+	}
+
+	&-background {
+		@include fade(
+			$type: 'bottom',
+			$color: $primary,
+			$alpha: 1,
+			$scale: 100%,
+			$start: 0%,
+			$stop: 75%,
+			$order: 1,
+			$prefix: '',
+			$suffix: '::before',
+			$is-fixed: false,
+			$clickable: false
+		);
+		z-index: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: {
+			position: center center;
+			repeat: no-repeat;
+			size: cover;
+		}
+
+	}
+
+}
+
+
+// MODIFIERS
+.hero-simple {
+
+	$self: &;
+
+	#{$self}-element {
+		
+	}
+
+	&.is-ready {
+
+	}
+
+	&.is-top {
+
+	}
+
+	&.is-not-top {
+
+	}
+
+	&.is-bottom {
+
+	}
+
+	&.is-not-bottom {
+
+	}
+
+	&.is-scrolling-up {
+
+	}
+
+	&.is-scrolling-down {
+
+	}
+
+}

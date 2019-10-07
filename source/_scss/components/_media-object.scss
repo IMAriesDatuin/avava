@@ -1,0 +1,168 @@
+/* -------------------------------------------------- */
+/* MEDIA OBJECT
+/* -------------------------------------------------- */
+
+// OPTIONS
+$media-object-options: (
+	duration: 225ms,
+	delay: 0ms,
+	ease: $easeNatural
+);
+
+
+// MAIN
+.media-object {
+
+	$self: &;
+
+	@include transition(
+		$property: (border, transform),
+		$duration: map-get($media-object-options, duration),
+		$delay: map-get($media-object-options, delay),
+		$ease: map-get($media-object-options, ease),
+		$optimize: false
+	);
+	padding: {
+		top: 0;
+		right: $gutter;
+		bottom: $gutter;
+		left: $gutter;
+	}
+	width: 100%;
+
+	@include break($min: $mobile, $max: $tablet, $orientation: 'portrait') {
+
+		padding-bottom: $gutter;
+
+		&:not(:first-child) {
+			padding-top: $gutter;
+		}
+
+		&:not(:last-child) {
+			border-bottom: thin dotted rgba($secondary, 0.5);
+		}
+
+	}
+
+	@include break($min: 0, $max: $mobile, $orientation: 'both') {
+
+		&:not(:last-child) {
+			//border-bottom: thin dotted rgba($secondary, 0.5);
+		}
+
+	}
+
+	&-section {
+
+		margin-top: 3rem;
+
+		.icon {
+			width: 50px;
+			height: 50px;			
+		}
+
+		.thumbnail {
+
+			@extend .box-shadow-xl;
+			overflow: hidden;
+			position: relative;
+			width: 100px;
+			height: 100px;
+			border-radius: 100px;
+			background: $gray;
+
+			img {
+				width: 100%;
+				max-width: 150px;
+				border-radius: 100px;
+			}
+
+		}
+
+		.headline {
+
+			margin: 0;
+			padding: 0;
+
+			&-title {
+				color: $white;
+				font-size: 0.75em;
+				letter-spacing: normal;
+			}
+
+			&-subtitle {
+				color: $secondary;
+				letter-spacing: normal;
+			}
+
+		}
+
+		p {
+			font-size: 1em;
+		}
+
+		.social {
+
+			margin: {
+				top: 2rem;
+				right: auto;
+				bottom: 0;
+				left: auto;
+			}
+			text-align: left;
+
+			li {
+
+				display: inline-block;
+
+				&:not(:last-child) {
+					margin-right: 2rem;
+				}
+
+				a {
+
+					@include transition(
+						$property: (color),
+						$duration: map-get($media-object-options, duration),
+						$delay: map-get($media-object-options, delay),
+						$ease: map-get($media-object-options, ease),
+						$optimize: false
+					);
+					overflow: hidden;
+					position: relative;
+					color: $secondary;
+					font: $copy;
+					font-size: 1em;
+					letter-spacing: 0.125em;
+					text-transform: uppercase;
+					white-space: nowrap;
+
+					&:hover {
+
+						color: $white;
+
+						&::before {
+							width: 100%;
+						}
+
+					}
+
+				}
+
+			}
+
+		}
+
+		&:last-child {
+			margin-left: 1rem;
+		}
+
+	}
+
+	&:hover,
+	&.is-active,
+	&.is-touch {
+
+	}
+
+}

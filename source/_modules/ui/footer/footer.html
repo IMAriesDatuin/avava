@@ -1,0 +1,98 @@
+
+<!-- CONTENT: FOOTER -->
+<footer id="footer" class="footer" data-page={{ page }}>
+
+
+	{{> logo-icon}}
+
+
+	<!-- SOCIAL -->
+	<ul class="footer-social social">
+
+		{{#each social.content}}
+		<li>
+
+			<a href="{{ link }}" target="_blank" aria-label="{{ description }}">
+				<p>{{ title }}</p>
+				<span class="fab fa-{{ icon }}" aria-hidden="true"></span>
+			</a>
+
+		</li>
+		{{/each}}
+
+	</ul>
+	<!-- // SOCIAL -->
+
+
+
+	<!-- GRID -->
+	<div class="footer-container grid-x align-top align-center small-up-1 medium-up-2 io">
+
+
+		<!-- MENU -->
+		<ul class="cell footer-menu io-list">
+
+			{{#each menu.content}}
+			<li>
+
+				<a href="--base/{{ link }}" class="{{ id }}">
+					{{ title }}
+				</a>
+				
+			</li>
+			{{/each}}
+
+		</ul>
+		<!-- // MENU -->
+
+
+		<!-- INFO -->
+		<div class="cell">
+
+
+			<!-- CONTACT -->
+			<ul class="footer-contact shrink io-list">
+				<li><a href="tel:+1--phone" aria-label="Contact us at: --phone for a consultation." data-no-swup>--phone</a></li>
+				<li><a href="--email" aria-label="Email us at: --email for a consultation." data-no-swup>--email</a></li>
+				<li><a href="#" aria-label="--adddress">--address</a></li>
+			</ul>
+			<!-- // CONTACT -->
+
+
+		</div>
+		<!-- // INFO -->
+
+
+	</div>
+	<!-- // GRID -->
+
+
+	<!-- DIVIDER -->
+	<hr class="hr-secondary-lr width-75 width-100-mobile-both">
+	<!-- // DIVIDER -->
+
+
+	<!-- LEGAL -->
+	<ul class="footer-legal list-separator">
+		<li>&copy;--year --name</li>
+		<!--<li><a href="--base/legal">HIPAA</a></li>-->
+		<!--<li><a href="--base/legal">Patient Rights &amp; Responsibilities</a></li>-->
+		<li><a href="--base/legal">Terms of Service</a></li>
+		<li><a href="--base/legal#privacy-policy">Privacy Policy</a></li>
+		<li><a href="https://incrediblemarketing.com" target="_blank" class="made-by"><span class="fas fa-heart margin-right-xs"></span>be incredible.</a></li>
+	</ul>
+	<!-- // LEGAL -->
+
+
+	<!-- BACK TO TOP -->
+	<a href="#welcome" class="footer-back-to-top z-2" aria-label="Back to top."><span class="fal fa-arrow-to-top margin-right-xs" aria-hidden="true"></span></a>
+	<!-- // BACK TO TOP -->
+
+
+	<!-- BACKGROUND -->
+	<div class="position-absolute top left background background-cover background-center background-no-repeat fade-primary-full motion motion-fade-in-out io lazy-load z-1" data-bg="url( {{ root }}{{ assets }}hex-background-landscape.png )"></div>
+	<!-- // BACKGROUND -->
+
+
+</footer>
+<!-- // CONTENT: FOOTER -->

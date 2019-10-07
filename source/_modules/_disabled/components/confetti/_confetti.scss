@@ -1,0 +1,51 @@
+/* -------------------------------------------------- */
+/* CONFETTI
+/* -------------------------------------------------- */
+
+// OPTIONS
+$confetti-options: (
+	text-color: $primary,
+	text-hover-color: $white,
+	active-text-color: $black,
+
+	background-color: transparent,
+	background-hover-color: $primary,
+	active-background-color: $white,
+
+	duration: 400ms,
+	delay: 0,
+	ease: $easeNatural
+);
+
+
+// MAIN
+.confetti {
+
+	$self: &;
+
+	/*
+	@include transition(
+		$property: (opacity),
+		$duration: map-get($confetti-options, duration),
+		$delay: map-get($confetti-options, duration),
+		$ease: map-get($confetti-options, ease),
+		$optimize: false
+	);
+	*/
+	pointer-events: none;
+	z-index: 2;
+	position: absolute;
+	top: 0;
+	lef: 0;
+	margin: 0 auto;
+	width: 100%;
+	height: 100%;
+	min-height: 100vh;
+	//border: solid 10px magenta;
+	background: map-get($confetti-options, background-color);
+
+	@include break($min: 0, $max: $mobile, $orientation: '') {
+		//display: none;
+	}
+	
+}

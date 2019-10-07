@@ -1,0 +1,18 @@
+/* -------------------------------------------------- */
+/* PARALLAX
+/* -------------------------------------------------- */
+
+// OPTIONS
+$parallax-options: (
+
+);
+
+
+// MAIN
+.parallax {
+
+	@include break($min: 0, $max: $mobile, $orientation: '') {
+		//display: none;
+	}
+
+}

@@ -1,0 +1,97 @@
+/* -------------------------------------------------- */
+/* GLITCH
+/* -------------------------------------------------- */
+
+// OPTIONS
+$glitch: (
+	text-color: $primary,
+	text-hover-color: $white,
+	active-text-color: $black,
+	background-color: $white,
+	background-hover-color: $primary,
+	active-background-color: $white,
+	duration: 800ms, // Set the duration of the animation.
+	delay: 0, // Delay the animation by this amount. 
+	ease: $easeNatural // Set the easing type for this animation.
+);
+
+
+// MAIN
+.glitch {
+
+	$self: &;
+
+	&-active {
+		filter: url('#svg-filter-glitch');
+	}
+
+	/*
+	&-active::before,
+	&-active::after {
+		content: '';
+		position: absolute;
+		top: -1px;
+		bottom: -1px;
+		width: 1px;
+	}
+
+	&-active::before {
+		right: -2px;
+		background: #3ffeff;
+		animation: animate-glitch-color-shift-primary map-get($glitch, duration) infinite;
+		animation-timing-function: step-end;
+	}
+
+	&-active::after {
+		left: -2px;
+		background: #ff536b;
+		animation: animate-glitch-color-shift-secondary map-get($glitch, duration) infinite;
+		animation-timing-function: step-end;
+	}
+	*/
+
+}
+
+
+// ANIMATIONS
+@keyframes animate-glitch-color-shift-primary {
+
+	0%, 7% {
+		background: #ff536b;
+	}
+
+	8%, 18% {
+		background: transparent;
+	}
+
+	19% {
+		width: 2px;
+		background: #ff536b;
+	}
+
+	23%, 100% {
+		background: transparent;
+	}
+
+}
+
+@keyframes animate-glitch-color-shift-secondary {
+
+	0%, 7% {
+		background: #3ffeff;
+	}
+
+	8%, 18% {
+		background: transparent;
+	}
+
+	19% {
+		width: 2px;
+		background: #3ffeff;
+	}
+
+	23%, 100% {
+		background: transparent;
+	}
+
+}

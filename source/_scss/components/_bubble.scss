@@ -1,0 +1,41 @@
+/* -------------------------------------------------- */
+/* BUBBLE
+/* -------------------------------------------------- */
+
+// OPTIONS
+$bubble-options: (
+	duration: 250ms,
+	delay: 0,
+	ease: $easeNatural
+);
+
+
+// MAIN
+.bubble {
+
+	@extend .box-shadow-xl;
+	overflow: hidden;
+	position: relative;
+	margin: 0 auto;
+	width: 200px;
+	height: 200px;
+	border-radius: 200px;
+	border: $thick solid $secondary;
+	background: {
+		color: $white;
+		position: center center;
+		repeat: no-repeat;
+		size: cover;
+	};
+
+	img {
+		width: 100%;
+		max-width: 200px;
+		border-radius: 200px;
+	}
+
+	@include break($min: 0, $max: $tablet, $orientation: 'portrait') {
+		//width: 100%;
+	}
+
+}

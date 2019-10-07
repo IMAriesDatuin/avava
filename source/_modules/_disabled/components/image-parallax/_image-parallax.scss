@@ -1,0 +1,42 @@
+/* -------------------------------------------------- */
+/* IMAGE PARALLAX
+/* -------------------------------------------------- */
+
+// OPTIONS
+$image-parallax-options: (
+
+);
+
+
+// MAIN
+.image-parallax {
+
+	@include fade(
+		$type: 'right',
+		$color: $charcoal,
+		$alpha: 1,
+		$scale: 100%,
+		$start: 0%,
+		$stop: 100%,
+		$order: 1,
+		$prefix: '',
+		$suffix: '::before',
+		$is-fixed: false,
+		$clickable: false
+	);
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: {
+		position: center center;
+		repeat: no-repeat;
+	}
+
+	@include break($min: 0, $max: $mobile, $orientation: '') {
+		//display: none;
+	}
+
+}

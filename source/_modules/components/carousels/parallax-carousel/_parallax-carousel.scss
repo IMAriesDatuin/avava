@@ -1,0 +1,363 @@
+/* -------------------------------------------------- */
+/* PARALLAX CAROUSEL
+/* -------------------------------------------------- */
+
+// OPTIONS
+$parallax-carousel-options: (
+	background-color: $accent,
+	duration: 250ms,
+	delay: 0ms,
+	ease: $easeNatural
+);
+
+
+// MAIN
+.parallax-carousel {
+
+	width: 100%;
+	height: auto;
+
+	.flickity-viewport {
+
+		overflow: hidden;
+
+		.flickity-slider {
+			//height: 100%;
+		}
+
+	}
+
+	.carousel-cell {
+
+		$self: &;
+
+		z-index: 1;
+		overflow: hidden;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		margin: 0 auto;
+		width: 100%;
+		height: auto;
+		//border-right: 0 solid $gray;
+		background: $white;
+
+		&:last-child {
+			border-right: 0 solid $gray;
+		}
+
+		.carousel-container {
+
+			overflow: hidden;
+
+			img {
+				width: 100%;
+			}
+
+		}
+
+		&.is-selected,
+		&.is-settled {
+
+		}
+
+	}
+
+	.flickity-custom-buttons {
+
+		@include transition(
+			$property: (opacity),
+			$duration: 400ms,
+			$delay: 0,
+			$ease: $easeNatural,
+			$optimize: false
+		);
+		z-index: 2;
+		pointer-events: none;
+		overflow: hidden;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;	
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		border-radius: 0;
+		background: transparent;
+
+		svg {
+			display: none;
+		}
+
+		.previous, .next {
+
+			display: none;
+			cursor: pointer;
+			pointer-events: all;
+			overflow: hidden;
+			display: flex;
+			align-items: center; 
+			justify-content: center;
+			width: 50px;
+			height: 100%;
+			background: transparent;
+
+			&:hover {
+
+				span {
+					@include transition(
+						$property: (color),
+						$duration: 400ms,
+						$delay: 0,
+						$ease: $easeNatural,
+						$optimize: false
+					);
+					color: $secondary;
+				}
+
+			}
+
+			span {
+				display: none;
+				color: $charcoal;
+				font-size: 1.5em;
+			}
+
+			&.is-disabled {
+				pointer-events: none;
+				opacity: 0;
+			}
+
+		}
+
+		.previous {
+			@include fade(
+				$type: 'left',
+				$color: $white,
+				$alpha: 1,
+				$scale: 50px,
+				$start: 0%,
+				$stop: 100%,
+				$order: -1,
+				$prefix: '',
+				$suffix: '::after',
+				$is-fixed: false,
+				$clickable: true
+			);
+			//left: -1px;
+		}
+
+		.next {
+			@include fade(
+				$type: 'right',
+				$color: $white,
+				$alpha: 1,
+				$scale: 50px,
+				$start: 0%,
+				$stop: 100%,
+				$order: -1,
+				$prefix: '',
+				$suffix: '::after',
+				$is-fixed: false,
+				$clickable: true
+			);
+			//right: -1px;
+		}
+
+	}
+
+	/*
+	.flickity-prev-next-button {
+
+		@include transition(
+			$property: (opacity),
+			$duration: 400ms,
+			$delay: 0,
+			$ease: $easeNatural,
+			$optimize: false
+		);
+		opacity: 1;
+		overflow: hidden;
+		width: 50px;
+		height: 100%;
+		border-radius: 0;
+		background: transparent;
+
+		svg {
+			display: none;
+		}
+
+		&:hover {
+			opacity: 1;
+		}
+
+		&.previous {
+
+			@include fade(
+				$type: 'left',
+				$color: $white,
+				$alpha: 1,
+				$scale: 100%,
+				$start: 0%,
+				$stop: 100%,
+				$order: 1,
+				$prefix: '',
+				$suffix: '::before',
+				$is-fixed: false,
+				$clickable: true
+			);
+			left: -1px;
+
+			&.is-disabled {
+				pointer-events: none;
+				opacity: 0;
+			}
+
+		}
+
+		&.next {
+
+			@include fade(
+				$type: 'right',
+				$color: $white,
+				$alpha: 1,
+				$scale: 100%,
+				$start: 0%,
+				$stop: 100%,
+				$order: 1,
+				$prefix: '',
+				$suffix: '::before',
+				$is-fixed: false,
+				$clickable: true
+			);
+			right: -1px;
+
+			&.is-disabled {
+				pointer-events: none;
+				opacity: 0;
+			}
+
+		}
+
+	}
+	*/
+
+	.flickity-page-dots {
+
+		display: block;
+		position: relative;
+		//left: 50%;
+		bottom: 0;
+		margin: {
+			top: 0;
+			right: auto;
+			bottom: 5rem;
+			left: auto;
+		}
+		width: 25%;
+		//transform: translateX(-50%);
+
+		&::after { // Line
+			content: '';
+			z-index: -1;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 100%;
+			height: 1px;
+			border: 0;
+			border-bottom: 2px solid;
+			border-image: linear-gradient(to right, rgba($secondary, 0) 0%, rgba($secondary, 1) 50%, rgba($secondary, 0) 100%);
+			border-image-slice: 1;
+			transform: translate(-50%,-50%);
+		}
+
+		li { // Dot
+
+			@include transition(
+				$property: (opacity, border, background, transform),
+				$duration: 200ms,
+				$delay: 0,
+				$ease: $easeNatural,
+				$optimize: false
+			);
+			opacity: 1;
+			overflow: visible;
+			position: relative;
+			margin-right: 2rem;
+			padding: {
+				left: 0;
+				right: 0;
+			}
+			width: 18px;
+			height: 18px;
+			border: 2px solid $secondary;
+			background: $white;
+
+			&:last-child {
+				margin-right: 0;
+			}
+
+			&::before { // Inner dot (selected)
+				@include transition(
+					$property: (opacity, border, background, transform),
+					$duration: 200ms,
+					$delay: 0,
+					$ease: $easeNatural,
+					$optimize: false
+				);
+				content: '';
+				z-index: 1;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 50%;
+				height: 50%;
+				border-radius: 100%;
+				background: $secondary;
+				transform: translate(-50%,-50%) scale3d(0,0,1);
+			}
+
+			&.is-selected {
+
+				border-color: $secondary;
+				//background: $primary;
+
+				&::before {
+					transform: translate(-50%,-50%) scale3d(1,1,1);
+				}
+
+			}
+
+		}
+
+		@include break($min: $mobile, $max: $laptop, $orientation: 'both') {
+			width: 50%;
+		}
+
+		@include break($min: 0, $max: $mobile, $orientation: 'both') {
+			width: 100%;
+		}
+
+	}
+
+}
+
+
+// MODIFIERS
+.parallax-carousel {
+
+	$self: &;
+
+	&.is-first-cell {
+		
+	}
+
+	&.is-last-cell {
+		
+	}
+
+}

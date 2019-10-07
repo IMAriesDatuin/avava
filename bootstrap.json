@@ -1,0 +1,73 @@
+{
+
+	"bundle": "framework",
+	"source": "node_modules/",	
+	"files": [
+				"<JQUERY>",
+				">>jquery/dist/jquery.js",
+				"jquery/dist/jquery.slim.js",
+				">>jquery.easing/jquery.easing.js",
+
+
+				"<BOOTSTRAP: CORE>",
+				"bootstrap/js/dist/alert.js",
+				"bootstrap/js/dist/button.js",
+				"bootstrap/js/dist/carousel.js",
+				"bootstrap/js/dist/collapse.js",
+				"bootstrap/js/dist/dropdown.js",
+				"bootstrap/js/dist/index.js",
+				"bootstrap/js/dist/modal.js",
+				"bootstrap/js/dist/popover.js",
+				"bootstrap/js/dist/scrollspy.js",
+				"bootstrap/js/dist/tab.js",
+				"bootstrap/js/dist/toast.js",
+				"bootstrap/js/dist/tooltip.js",
+				"bootstrap/js/dist/util.js"
+
+
+				"<SWUP>",
+				"swup/dist/swup.js",
+				"@swup/body-class-plugin/dist/SwupBodyClassPlugin.js",
+				"@swup/debug-plugin/dist/SwupDebugPlugin.js",
+				"@swup/forms-plugin/dist/SwupFormsPlugin.js",
+				"@swup/ga-plugin/dist/SwupGaPlugin.js",
+				"@swup/gtm-plugin/dist/SwupGtmPlugin.js",
+				">>@swup/head-plugin/dist/SwupHeadPlugin.js",
+				"@swup/js-plugin/dist/SwupJsPlugin.js",
+				"@swup/preload-plugin/dist/SwupPreloadPlugin.js",
+				">>@swup/scripts-plugin/dist/SwupScriptsPlugin.js",
+				"@swup/scroll-plugin/dist/SwupScrollPlugin.js",
+
+
+				"<ANIMATION ENGINE: GSAP (CORE)>",
+				">>gsap/src/uncompressed/TweenLite.js",
+				">>gsap/src/uncompressed/TimelineLite.js",
+				"gsap/src/uncompressed/TweenMax.js",
+				"gsap/src/uncompressed/TimelineMax.js",
+				">>gsap/src/uncompressed/jquery.gsap.js",
+
+				"<ANIMATION ENGINE: GSAP (EASING)>",
+				">>gsap/src/uncompressed/easing/CustomBounce.js",
+				">>gsap/src/uncompressed/easing/CustomEase.js",
+				">>gsap/src/uncompressed/easing/CustomWiggle.js",
+				">>gsap/src/uncompressed/easing/EasePack.js",
+
+				"<ANIMATION ENGINE: GSAP (PLUGINS)>",
+				">>gsap/src/uncompressed/plugins/AttrPlugin.js",
+				">>gsap/src/uncompressed/plugins/BezierPlugin.js",
+				"gsap/src/uncompressed/plugins/ColorPropsPlugin.js",
+				">>gsap/src/uncompressed/plugins/CSSPlugin.js",
+				"gsap/src/uncompressed/plugins/CSSRulePlugin.js",
+				"gsap/src/uncompressed/plugins/DirectionalRotationPlugin.js",
+				">>gsap/src/uncompressed/plugins/EaselPlugin.js",
+				">>gsap/src/uncompressed/plugins/EndArrayPlugin.js",
+				">>gsap/src/uncompressed/plugins/ModifiersPlugin.js",
+				">>gsap/src/uncompressed/plugins/PixiPlugin.js",
+				">>gsap/src/uncompressed/plugins/RaphaelPlugin.js",
+				">>gsap/src/uncompressed/plugins/ScrollToPlugin.js",
+
+				"<ANIMATION ENGINE: GSAP (UTILITIES)",
+				">>gsap/src/uncompressed/utils/Draggable.js"
+			 ]
+
+}

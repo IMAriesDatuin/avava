@@ -1,0 +1,35 @@
+/* -------------------------------------------------- */
+/* COLLAGE OBJECT
+/* -------------------------------------------------- */
+
+// OPTIONS
+$collage-object-options: (
+	duration: 250ms,
+	delay: 0,
+	ease: $easeNatural
+);
+
+
+// MAIN
+.collage-object {
+
+	position: relative;
+
+	&-section {
+		@extend .box-shadow-xl;
+		position: absolute;
+		width: 200px;
+		height: 200px;
+		border-radius: 200px;
+		background: {
+			position: center center;
+			repeat: no-repeat;
+			size: cover;
+		};
+	}
+
+	@include break($min: 0, $max: $tablet, $orientation: 'portrait') {
+		//width: 100%;
+	}
+
+}

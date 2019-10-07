@@ -1,0 +1,80 @@
+
+<!-- CONTENT: HERO -->
+<section id="welcome" class="hero grid-x align-middle align-center no-gutter no-selection" role="banner">
+
+
+	<!-- CONTENT: PARALLAX CAROUSEL -->
+	<div class="hero-parallax parallax-carousel carousel">
+
+
+		<!-- CELL -->
+		{{#each hero-carousel.content}}
+		<div id="{{ id }}" class="carousel-cell carousel-lazy-load">
+
+
+			<!-- PHOTO -->
+			<div class="carousel-container">
+
+
+				<!-- IMAGE -->
+				<picture>
+					<source type="image/webp" data-srcset="{{ root }}{{ webp }}">
+					<img data-flickity-lazyload="{{ root }}{{ image }}" alt="{{ copy }}">
+				</picture>
+				<!-- // IMAGE -->
+
+
+			</div>
+			<!-- PHOTO -->
+
+
+			<!-- BLOCK -->
+			<div class="text-block">
+
+
+				<!-- COPY -->
+				<h2 class="headline">{{ title }}</h2>
+				<p>{{ copy }}</p>
+				<!-- // COPY -->
+
+
+				<!-- DIVIDER -->
+				<hr class="hr-secondary-lr">
+				<!-- // DIVIDER -->
+
+
+				<!-- BUTTON -->
+				<a href="#" class="button button-theme button-theme-reverse">
+					<span class="button-label">Learn more</span>
+					<span class="button-icon fal fa-long-arrow-right"></span>
+					<span class="button-icon fal fa-long-arrow-right"></span>
+				</a>
+				<!-- // BUTTON -->
+
+
+			</div>
+			<!-- // BLOCK -->
+
+
+		</div>
+		<!-- // CELL -->
+		{{/each}}
+
+
+		<!-- CONTROLS -->
+		<div class="flickity-custom-buttons">
+			<button class="previous" type="button" aria-label="Previous"><span class="fal fa-long-arrow-left"></span></button>
+			<button class="next" type="button" aria-label="Previous"><span class="fal fa-long-arrow-right"></span></button>
+		</div>
+		<!-- // CONTROLS -->
+
+
+	</div>
+	<!-- // CONTENT: PARALLAX CAROUSEL -->
+
+
+	{{> block-cap-bottom}}
+
+
+</section>
+<!-- // CONTENT: HERO -->

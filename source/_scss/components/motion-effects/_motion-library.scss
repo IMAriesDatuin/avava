@@ -1,0 +1,46 @@
+/* -------------------------------------------------- */
+/* MOTION LIBRARY
+/* -------------------------------------------------- */
+
+// OPTIONS
+$motion-library-options: (
+	duration: 250ms,
+	delay: 0ms,
+	ease: $easeNatural
+);
+
+
+// MAIN
+.motion {
+
+	animation-duration: map-get($motion-library-options, duration) * 25;
+	animation-timing-function: map-get($motion-library-options, ease);
+	animation-delay: map-get($motion-library-options, delay);
+	animation-fill-mode: forwards;
+	animation-play-state: paused;
+	
+	&-fade-in-out.in-view {
+		animation-name: motion-fade-in-out;
+		animation-iteration-count: infinite;
+		animation-play-state: running;
+	}
+
+}
+
+
+// ANIMATIONS
+@keyframes motion-fade-in-out {
+
+	0% {
+		opacity: 0.1;
+	}
+
+	50% {
+		opacity: 0.3;
+	}
+
+	100% {
+		opacity: 0.1;
+	}
+
+}

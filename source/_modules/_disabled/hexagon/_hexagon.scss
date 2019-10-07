@@ -1,0 +1,84 @@
+/* -------------------------------------------------- */
+/* HEXAGON
+/* -------------------------------------------------- */
+
+// OPTIONS
+$hexagon-options: (
+	duration: 800ms,
+	delay: 0ms,
+	ease: $easeNatural
+);
+
+
+// MAIN
+.hexagon {
+
+	$self: &;
+
+	@include fade(
+		$type: 'full',
+		$color: $primary,
+		$alpha: 1,
+		$scale: 100%,
+		$start: 0%,
+		$stop: 100%,
+		$order: 1,
+		$prefix: '',
+		$suffix: '::before',
+		$is-fixed: false,
+		$clickable: false
+	);
+	//z-index: 999;
+	opacity: 0.5;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+
+	@include break($min: 0, $max: $mobile, $orientation: '') {
+		//display: none;
+	}
+	
+}
+
+
+// MODIFIERS
+.heagon {
+
+	$self: &;
+
+	#{$self}-element {
+		
+	}
+
+	&.is-ready {
+
+	}
+
+	&.is-top {
+
+	}
+
+	&.is-not-top {
+
+	}
+
+	&.is-bottom {
+
+	}
+
+	&.is-not-bottom {
+
+	}
+
+	&.is-scrolling-up {
+
+	}
+
+	&.is-scrolling-down {
+
+	}
+
+}

@@ -1,0 +1,68 @@
+/* -------------------------------------------------- */
+/* PARTICLE GRID
+/* -------------------------------------------------- */
+
+// OPTIONS
+$particle-grid-options: (
+	text-color: $primary,
+	text-hover-color: $white,
+	active-text-color: $black,
+	background-color: $white,
+	background-hover-color: $primary,
+	active-background-color: $white,
+	duration: 100ms, // Set the duration of the animation.
+	delay: 0, // Delay the animation by this amount. 
+	ease: $easeWipe // Set the easing type for this animation.
+);
+
+
+// MAIN
+.particle-grid {
+
+	overflow: hidden;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	max-width: 2560px;
+	//min-height: 100vh;
+	transform-origin: center center;
+
+	@include break($min: 0, $max: $mobile, $orientation: '') {
+		//display: none;
+	}
+	
+}
+
+
+// MODIFIERS
+body {
+
+	> .particle-grid {
+
+		/*
+		@include transition(
+			$property: (opacity, transform),
+			$duration: map-get($component-options, duration),
+			$delay: map-get($component-options, duration),
+			$ease: map-get($component-options, ease),
+			$optimize: true
+		);
+		*/
+		//z-index: -1;
+		//opacity: 1;
+		position: fixed;
+		//transform: scale3d(1,1,1);
+
+		&.is-not-top {
+			//opacity: 0.1;
+			//transform: scale3d(0.96,0.96,1);
+		}
+
+		&.is-bottom {
+			//opacity: 1;
+			//transform: scale3d(1,1,1);
+		}
+
+	}
+
+}

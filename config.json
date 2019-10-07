@@ -1,0 +1,430 @@
+{
+
+	"compiler": {
+		"framework": "foundation.json",
+		"transpile": false,
+		"transpiler": "@babel/preset-env",
+		"transpilerWarnings": false,
+		"production": true,
+		"cacheBuild": false,
+		"rememberFiles": true,
+		"removeUnusedCode": true,
+		"beepWhenDone": true,
+		"backup": false,
+		"previewURL": "index.html"
+	},
+
+	"site": {
+		"version": "0.0.1",
+		"language": "en",
+		"name": "AVAVA",
+		"shortName": "AVAVA",
+		"base": "https://imariesdatuin.github.io/avava/build",
+		"url": "https://imariesdatuin.github.io/avava/build",
+		"startURL": "index.html",
+		"display": "standalone",
+		"description": "Introducing laser skin therapy for all skin types — even dark skin tones. The first effective solution for hyperpigmentation on dark skin.",
+
+		"verification" : {
+			"allow": false,
+			"google": "",
+			"ms": ""
+		},
+
+		"contact": {
+			"email": "info@avavamedical.com",
+			"phone": "617.912.2680",
+			"fax": "631 982 2024",
+			"address": "275 Second Avenue, 3rd Floor<br>Waltham, MA 02451"
+		},
+
+		"social": {
+			"profile": "android-chrome-512x512.png",
+			"cover": "cover.png"
+		},
+
+		"icons": {
+
+			"master": "assets/icon.png",
+			"path": "",
+
+			"favicon": {
+				"default": "favicon.ico",
+				"small": "favicon-16x16.png",
+				"large": "favicon-32x32.png"
+			},
+
+			"apple": {
+				"margin": "21%",
+				"default": "apple-touch-icon.png",
+				"safariPinnedTab": "safari-pinned-tab.svg"
+			},
+
+			"android": {
+				"small": "android-chrome-192x192.png",
+				"large": "android-chrome-512x512.png"
+			},
+
+			"ms": {		
+				"small": "mstile-70x70.png",
+				"medium": "mstile-150x150.png",
+				"large": "mstile-310x310.png",
+				"wide": "mstile-310x150.png"
+			}
+
+		},
+
+		"colors": {
+			"theme": "#fff",
+			"background": "#fff"
+		},
+		
+		"facebook": {
+			"locale": "en_US",
+			"localeAlt": "",
+			"type": "website",
+			"imageWidth": 1200,
+			"imageHeight": 630
+		},
+
+		"twitter": {
+			"handle": "@company",
+			"card": "summary"
+		},
+
+		"viewport": {
+			"initialScale": 1,
+			"minimumScale": 1,
+			"shrinkToFit": "no",
+			"userScalable": "yes",
+			"viewportFit": "cover"
+		},
+
+		"serviceworker": true,
+		"appBanner": false,
+
+		"handheldFriendly": true,
+		"webAppCapable": "no",
+		
+		"iTunesAppID": "000000000",
+		"playAppID": "com.company.app"
+	},
+
+	"paths": {
+		"source": "source/",
+		"build": "build/",
+		"scripts": "scripts/",
+		"assets": "assets/",
+		"webfonts": "webfonts/"
+	},
+
+	"accessibility": {
+		"allow": false,
+		"generateReport": false
+	},
+
+	"tracking": {
+
+		"fullstory": {
+			"allow": true,
+			"id": "KMGP5"
+		},
+
+		"ga": {
+			"allow": false,
+			"url": "domain.com",
+			"id": "UA-00000000-0",
+			"anonymizeIp": true,
+			"bounceTime": "",
+			"demographics": true,
+			"linkAttribution": false,
+			"minify": true,
+			"nonceTag": false,
+			"require": "urlChangeTracker",
+			"sendPageView": true,
+			"tagPlacement": "head",
+			"offline": false
+		},
+
+		"gtm": {
+			"allow": false,
+			"id": "GTM-0000000"
+		}
+
+	},
+
+	"robots": {
+		"useragent": "*",
+		"allow": [""],
+		"disallow": ["/assets/", "/cgi-bin/", "/downloads/", "/fonts/", "/scripts/"]
+	},
+
+	"versioning": {
+
+		"scripts": {
+			"allow": true,
+			"prefix": ".",
+			"suffix": ""
+		},
+
+		"images": {
+			"allow": false,
+			"prefix": ".",
+			"suffix": ""
+		}
+
+	},
+
+	"fonts": {
+		"allow": true,
+		"source": "typekit",
+		"families": ["Montserrat"],
+		"id": "shr5vpt",
+		"api": "//use.typekit.net",
+		"urls": ["/fonts.css"],
+		"text": null,
+		"version": 12345,
+		"loadAllFonts": true,
+		"classes": false,
+		"events": false,
+		"context": ["my-child"],
+		"timeout": 5000,
+		"script": "https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js"
+	},
+
+	"images": {
+
+		"raster": {
+			"quality": 5,
+			"interlaced": true,
+			"progressive": true
+		},
+
+		"webp": {
+			"convert": true,
+			"quality": 100,
+			"alphaQuality": 100,
+			"sharpness": 0
+		},
+
+		"svg": {
+			"convert": {
+						"allow": true,
+						"format": "png",
+						"scale": "2"
+			},
+			"cleanup": true,
+			"minify": true,
+			"removeEmptyText": true,
+			"removeMetadata": true,
+			"removeTitle": true,
+			"removeRaster": true,
+			"removeScript": true,
+			"removeStyle": true,
+			"removeViewBox": true
+		}
+
+	},
+
+	"html": {
+		"files": "_pages/**/*.{html,hbs,handlebars}",
+		
+		"layouts": "_layouts/",
+		"pages": "_pages/",
+		"partials": "_modules/",
+		"helpers": "_helpers/",
+		"data": "_data/",
+		"inlineScripts": "_inline/"
+	},
+
+	"optimizations": {
+		"critical": {
+			"allow": true,
+			"extract": false,
+			"width": 1920,
+			"height": 1080
+		},
+		"html": {
+			"minify": true
+		},
+		"js": {
+			"minify": true,
+			"dropConsole": true,
+			"ie8Support": false,
+			"keepfnames": false,
+			"mangle": true,
+			"removeDeadCode": true,
+			"toplevel": false,
+			"modernizr": false
+		},
+		"css": {
+			"minify": true,
+			"autoprefix": true,
+			"cascade": true,
+			"flexbox": false,
+			"grid": false,
+			"rebase": true,
+			"removeDuplicatedProperties": true,
+			"removeOutdatedPrefixes": true,
+			"supports": true,
+			"support": ["last 2 versions", "ie >= 9", "android >= 4.4", "ios >= 7"],
+			"whitelist": ["/\bmejs__/g"]
+		}
+	},
+
+	"css": {
+		"bundle": "app",
+		"source": "_scss/",
+		"lint": true,
+		"sourcemaps": true
+	},
+
+	"js": {
+		"vendorsBundle": "a.vendors",
+		"appBundle": "b.app",
+		"lint": true,
+		"sourcemaps": true,
+
+		"vendors": {
+			"bundle": "core",
+			"source": "_modules/",
+			"files": [
+						"<POLYFILLS / FALLBACK>",
+						"_polyfills/**/*.js",
+
+
+						"<CORE>",
+						"_core/get-info.js",
+						">>_core/gui.js",
+						"_core/detect.js",
+
+						"_core/scrolllock.js",
+						"_core/scrollstartstop.js",
+
+						"_core/docready.js",
+						"_core/selectorcache.js",
+						">>_core/multipleeventlisteners.js",
+						"_core/passiveeventlisteners.js",
+
+						"_core/cookies.js",
+						">>_core/loadjson.js",
+						"_core/lodash.js",
+
+						"_core/lazyload.js",
+						"_core/lax.js",
+						">>_core/luxy.js",
+						">>_core/smoothscroll.js",
+
+						"_core/print.js",
+						"_core/visibility.js",
+
+						"_core/headroom.js",
+
+						">>_core/imagesloaded.js",
+						">>_core/curtains.js",
+						">>_core/pixi.js",
+						"_core/three.js",
+
+						"_core/gauge.js",
+
+
+						"<ANIMATION ENGINE: GSAP (CLUB GREENSOCK PLUGINS)",
+						"_core/gsap/plugins/DrawSVGPlugin.js",
+						">>_core/gsap/plugins/MorphSVGPlugin.js",
+						">>_core/gsap/plugins/Physics2DPlugin.js",
+						">>_core/gsap/plugins/PhysicsPropsPlugin.js",
+						">>_core/gsap/plugins/ScrambleTextPlugin.js",
+						">>_core/gsap/plugins/TextPlugin.js",
+						">>_core/gsap/plugins/ThrowPropsPlugin.js",
+						">>_core/gsap/utils/GSDevTools.js",
+						"_core/gsap/utils/SplitText.js",
+
+
+						"<PLUGINS>",
+						"_plugins/flickity/flickity.js",
+						"_plugins/flickity/imagesloaded.js",
+						">>_plugins/flickity/isotope.js",
+						"_plugins/flickity/plugins/background.lazyload.js",
+						"_plugins/flickity/plugins/flickity-fade/flickity-fade.js",
+						">>_plugins/flickity/plugins/hash.js",
+
+						">>_plugins/adaptivebackground.js",
+						">>_plugins/confetti.js",
+						">>_plugins/distortion.js",
+						">>_plugins/ripple.js",
+						"_plugins/waves/waves.js"
+				 	]
+
+		},
+
+		"app": {
+			"bundle": "main",
+			"source": "_modules/",
+			"files": [
+						"<APP>",
+						"options.js",
+						"detect.js",
+						"utilities/**/*.js",
+						"ui/**/*.js",
+						"components/**/*.js",
+						"elements/**/*.js",
+						"icons/**/*.js",
+						"layouts/**/*.js",
+						"pages/**/*.js",
+						"modules.js",
+						">>_template/**/*.js",
+						"index.js"
+				 ]
+		},
+
+		"libs": {
+			"allow": true,
+			"bundle": "libs",
+			"source": "",
+			"files": "_libs/**/*.js"
+		}
+	},
+
+	"zip": {
+		"allow": false,
+		"assets": ["!common/**/*.webp", "common/**/*"]
+	},
+
+	"sync": {
+		"notify": true,
+
+		"browser": "default",
+		"host": "",
+		"https": false,
+		"localOnly": false,
+		"online": true,
+		"port": "3000",
+
+		"cors": true,
+		"open": "external",
+		"tunnel": false,
+		"xip": false,
+
+		"codeSync": true,
+		"injectChanges": true,
+		"watch": true,
+
+		"ghostMode": true,
+
+		"reloadDebounce": 0,
+		"reloadDelay": 1000,
+		"reloadThrottle": 0,
+		
+		"scrollElements": [],
+		"scrollElementMapping": [],
+		"scrollProportionally": true,
+		"scrollRestoreTechnique": "window.name",
+		"scrollThrottle": 0,
+
+		"logConnections": true,
+		"logFileChanges": false,
+		"logLevel": "info",
+		"timestamps": true
+	}
+
+}

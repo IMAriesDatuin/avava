@@ -1,0 +1,31 @@
+/* -------------------------------------------------- */
+/* META
+/* -------------------------------------------------- */
+
+// OPTIONS
+$meta-options: (
+	duration: 800ms,
+	delay: 0ms,
+	ease: $easeWipe
+);
+
+
+// MAIN
+.meta {
+
+	display: block;
+
+	li {
+		color: $gray;
+		font: $headline;
+		font-size: 0.875em;
+		margin-bottom: 0.5rem;
+	}
+	
+	/*
+	@include break($min: 0, $max: $mobile, $orientation: 'portrait') {
+		font-size: 2.5em;
+	}
+	*/
+
+}

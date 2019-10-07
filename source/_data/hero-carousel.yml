@@ -1,0 +1,41 @@
+
+# CONTENT
+content:
+ -
+  id: 'slide-01'
+  image: 'assets/hero/shutterstock_1357158890.png'
+  webp: 'assets/hero/shutterstock_1357158890.webp'
+  title: 'Introducing laser skin therapy for all skin types — even dark skin tones'
+  copy: 'The first effective solution for hyperpigmentation on dark skin.'
+  citing: ''
+  link: 'index'
+
+
+ -
+  id: 'slide-02'
+  image: 'assets/hero/shutterstock_400535719.png'
+  webp: 'assets/hero/shutterstock_400535719.webp'
+  title: 'Designed for precision with three-dimensional, spatially selective laser technology'
+  copy: 'Maximizes absorption at the target with no epidermal damage.'
+  citing: ''
+  link: 'index'
+
+
+ -
+  id: 'slide-03'
+  image: 'assets/hero/shutterstock_714361963.png'
+  webp: 'assets/hero/shutterstock_714361963.webp'
+  title: 'Our team of leading experts has a pioneering vision for the global marketplace'
+  copy: 'From the creators of laser hair removal and CoolSculpting.'
+  citing: ''
+  link: 'index'
+
+
+ -
+  id: 'slide-04'
+  image: 'assets/hero/shutterstock_1497401618.png'
+  webp: 'assets/hero/shutterstock_1497401618.webp'
+  title: 'With an adaptable platform, skin therapy is just the beginning for AVAVA'
+  copy: 'Broad clinical applications are on the horizon.'
+  citing: ''
+  link: 'index'

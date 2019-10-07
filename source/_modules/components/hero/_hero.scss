@@ -1,0 +1,230 @@
+/* -------------------------------------------------- */
+/* HERO
+/* -------------------------------------------------- */
+
+// OPTIONS
+$hero-options: (
+	scroll-label: 'Welcome',
+	font: $copy, // Defined the font for the text links.
+	text-color: $white, // Set the default color for all elements.
+	text-hover-color: $accent, // Set the hover color for all elements.
+	background-color: $white, // Set the nav panel's background color.
+	background-hover-color: $white, // Set the nav panel's background color.
+	blend-mode: luminosity, // Set the blend-mode when interacting with elements: color, color-burn, color-dodge, exclusion, darken, hue, lighten, luminosity, normal, hard-light, multiply, overlay, saturation, screen, soft-light
+	duration: 400ms, // Set the duration of the animation.
+	delay: 0ms, // Delay the animation by this amount. 
+	ease: $easeWipe // Set the easing type for this animation.
+);
+
+
+// MAIN
+.hero {
+
+	$self: &;
+
+	z-index: 0;
+	overflow: hidden;
+	position: relative;
+	margin: {
+		top: 60px;
+		right: auto;
+		bottom: 0;
+		left: auto;
+	};
+	width: 100%;
+	height: auto;
+	background: $white;
+
+	&-parallax {
+
+		.carousel-cell {
+
+			$self: &;
+
+			justify-content: flex-end;
+
+			@include break($min: 0, $max: $mobile, $orientation: 'portrait') {
+				justify-content: center;
+			}
+
+			.text-block {
+
+				pointer-events: none;
+				z-index: 2;
+				position: absolute;
+				right: 10%;
+				width: 100%;
+				max-width: 500px;
+				background: transparent;
+
+				@include break($min: 0, $max: $tablet, $orientation: 'both') {
+					right: 0;
+					max-width: 400px;
+				}
+
+				@include break($min: 0, $max: $mobile, $orientation: 'portrait') {
+					position: relative;
+					right: 0;
+					max-width: 100%;
+				}
+
+				.headline, p {
+					opacity: 0;
+					transform: translate3d(-10px,0,0);
+				}
+
+				.button {
+					opacity: 0;
+				}
+
+				.headline {
+
+					@include transition(
+						$property: (opacity, transform),
+						$duration: 250ms,
+						$delay: 200ms,
+						$ease: $easeNatural,
+						$optimize: false
+					);
+					//color: $primary;
+					font-size: 1.75em;
+					letter-spacing: 0;
+
+					&-title {
+						
+					}
+
+					&-subtitle {
+						//color: $gray;
+						font-size: 0.75em;
+						text-shadow: none;
+					}
+
+					@include break($min: 0, $max: $mobile, $orientation: 'both') {
+						font-size: 1.5em;
+					}
+
+				}
+
+				p {
+					@include transition(
+						$property: (opacity, transform),
+						$duration: 250ms,
+						$delay: 300ms,
+						$ease: $easeNatural,
+						$optimize: false
+					);
+					//padding-bottom: 2rem;
+					/*
+					border: 0px;
+					border-bottom: 1px solid;
+					border-image: linear-gradient( to right, rgba($secondary, 1), rgba($secondary, 0) );
+					border-image-slice: 1;
+					*/
+				}
+
+				.button {
+
+				}
+
+			}
+
+			.carousel-container {
+
+				@include fade(
+					$type: 'bottom',
+					$color: $white,
+					$alpha: 1,
+					$scale: 50%,
+					$start: 0%,
+					$stop: 100%,
+					$order: 1,
+					$prefix: '',
+					$suffix: '::before',
+					$is-fixed: false,
+					$clickable: false
+				);
+				position: relative;
+
+				img {
+
+					width: 100%;
+
+					@include break($min: 0, $max: $mobile, $orientation: 'portrait') {
+						position: relative;
+						left: 20%;
+					}
+
+				}
+
+			}
+
+			//&.is-selected,
+			&.is-settled {
+
+				.text-block {
+
+					.headline, p {
+						opacity: 1;
+						transform: translate3d(0,0,0);
+					}
+
+					.button {
+						opacity: 1;
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+	.block-cap {
+		position: relative;
+		left: 0;
+		bottom: 0;
+	}
+
+}
+
+
+// MODIFIERS
+.hero {
+
+	$self: &;
+
+	#{$self}-element {
+		
+	}
+
+	&.is-ready {
+
+	}
+
+	&.is-top {
+
+	}
+
+	&.is-not-top {
+
+	}
+
+	&.is-bottom {
+
+	}
+
+	&.is-not-bottom {
+
+	}
+
+	&.is-scrolling-up {
+
+	}
+
+	&.is-scrolling-down {
+
+	}
+
+}

@@ -1,0 +1,91 @@
+/* -------------------------------------------------- */
+/* GAUGE
+/* -------------------------------------------------- */
+
+// OPTIONS
+$gauge-options: (
+	dial-color: $secondary,
+	value-color: $secondary,
+	duration: 800ms,
+	delay: 0ms,
+	ease: $easeNatural
+);
+
+
+// MAIN
+.gauge {
+
+	margin: 0 auto;
+	padding: 0;
+	width: 75px;
+	height: 75px;
+
+	/* Do not alter classnames. */
+	&-cluster {
+
+		&-dial {
+			width: 100%;
+			height: 100%;
+			stroke: $accent;
+			stroke-width: 4;
+			fill: rgba(0,0,0,0);
+		}
+
+		&-value-text {
+			fill: $white;
+			font-family: $headline;
+			font-size: 1.25em;
+		}
+
+		&-value {
+			stroke: $secondary;
+			stroke-dasharray: none;
+			stroke-width: 6;
+			fill: rgba(0,0,0,0);
+
+
+		}
+
+	}
+
+}
+
+
+// MODIFIERS
+.gauge {
+
+	$self: &;
+
+	#{$self}-element {
+		
+	}
+
+	&.is-ready {
+
+	}
+
+	&.is-top {
+
+	}
+
+	&.is-not-top {
+
+	}
+
+	&.is-bottom {
+
+	}
+
+	&.is-not-bottom {
+
+	}
+
+	&.is-scrolling-up {
+
+	}
+
+	&.is-scrolling-down {
+
+	}
+
+}

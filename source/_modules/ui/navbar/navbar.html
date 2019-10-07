@@ -1,0 +1,77 @@
+
+<!-- CONTENT: NAVBAR -->
+<header id="navbar" class="navbar headroom" data-page={{ page }}>
+
+
+	<!-- GRID -->
+	<div class="menubar">
+
+
+		<!-- LOGO -->
+		<a href="/" class="menubar-logo" aria-label="--name" >
+
+			{{> logo-icon-navbar}}
+
+		</a>
+		<!-- // LOGO -->
+
+
+		<!-- MENU -->
+		<nav class="menubar-menu no-cursor">
+
+			<ul>
+
+				{{#each menu.content}}
+				<li>
+
+					<a href="--base/{{ link }}" class="{{ id }}">{{ title }}</a>
+
+				</li>
+				{{/each}}
+
+				<li>
+
+					<a href="mailto:--email" class="contact-us">Contact Us</a>
+
+				</li>
+
+			</ul>
+
+		</nav>
+		<!-- // MENU -->
+
+
+		<!-- BUTTON: CTA -->
+		<a href="--base/#" class="menubar-cta button button-theme">
+			<span class="button-label">--phone</span>
+			<span class="button-icon fal fa-phone"></span>
+			<span class="button-icon fal fa-long-arrow-right"></span>
+		</a>
+		<!-- // BUTTON: CTA -->
+
+
+		<!-- MENU TOGGLE -->
+		<div class="menubar-toggle menu-toggle headroom">
+
+			<button class="menubar-toggle-label no-waves" type="button" aria-label="Open or close main site navigation."></button>
+			
+			<button class="menubar-toggle-icon no-waves" type="button" aria-label="Open or close main site navigation.">
+				<span></span>
+			</button>
+
+		</div>
+		<!-- // MENU TOGGLE -->
+
+
+	</div>
+	<!-- // GRID -->
+
+
+	<!-- BACKGROUND -->
+	<div class="navbar-background"></div>
+	<!--<div class="navbar-background lax" data-lax-opacity="0 0, (vh*0.25) 1 | loop=0 offset=0 speed=1" data-lax-anchor="self"></div>-->
+	<!-- // BACKGROUND -->
+
+
+</header>
+<!-- // CONTENT: NAVBAR -->

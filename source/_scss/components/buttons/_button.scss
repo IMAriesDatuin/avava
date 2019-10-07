@@ -1,0 +1,356 @@
+/* -------------------------------------------------- */
+/* BUTTON (DEFAULT)
+/* -------------------------------------------------- */
+
+// OPTIONS
+$button-options: (
+	sizes: (
+		small: 25%,
+		medium: 50%,
+		large: 75%
+	),
+
+	font: $copy,
+
+	text-color: $primary,
+	text-hover-color: $primary,
+
+	icon-color: $primary,
+	icon-hover-color: $primary,
+
+	background-color: $secondary,
+	background-hover-color: lighten($secondary, 5%),
+
+	use-shadows: true,
+	drop-shadow-color: $shadow,
+
+	radius: 50px,
+	x: 0,
+	y: -10px,
+	scale: 1,
+
+	truncate: false,
+	
+	duration: 400ms,
+	delay: 0ms,
+	ease: $easeNatural
+) !default;
+
+
+// MAIN
+.button {
+
+	$self: &;
+
+	@include shadow(
+		$type: 'box-shadow',
+		$color: map-get($button-options, drop-shadow-color),
+		$x: 0,
+		$y: 4px,
+		$blur: 8px,
+		$spread: 0,
+		$alpha: 0.2,
+		$strength: 0, 
+		$inset: false
+	);
+	@include transition(
+		$property: (opacity, color, border, background, box-shadow, transform),
+		$duration: map-get($button-options, duration),
+		$delay: map-get($button-options, delay),
+		$ease: map-get($button-options, ease),
+		$optimize: false
+	);
+	pointer-events: all;
+	outline: none;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: {
+		top: 2rem;
+		bottom: 2rem;
+	};
+	padding: 0.75em 2em;
+	width: 35%;
+	height: auto;
+	min-height: 50px;
+	color: map-get($button-options, text-color);
+	font: map-get($button-options, font);
+	font-size: 1em;
+	text-decoration: none;
+	border-radius: map-get($button-options, radius);
+	background: map-get($button-options, background-color);
+	//background: linear-gradient(to right, map-get($button-options, background-color) 25%, darken( map-get($button-options, background-color), $darken) 100%);
+	transform:
+		translate3d(0,0,0)
+		scale3d(1,1,1)
+		translateZ(0);
+	transform-origin: bottom center;
+	backface-visibility: hidden;
+	perspective: 1000;
+
+	&-label {
+		flex-basis: auto;
+		font: inherit;
+		letter-spacing: 0.05em;
+	}
+
+	&-icon {
+
+		flex-basis: auto;
+		margin-left: 1rem;
+
+		&:last-child {
+			display: none;
+		}
+
+	}
+
+	&:hover,
+	&.is-active,
+	&.is-touch {
+		@include shadow(
+			$type: 'box-shadow',
+			$color: map-get($button-options, drop-shadow-color),
+			$x: 0,
+			$y: 14px,
+			$blur: 32px,
+			$spread: 0,
+			$alpha: 0.4,
+			$strength: 0,
+			$inset: false
+		);
+		color: map-get($button-options, text-hover-color);
+		//border-color: map-get($button-options, background-hover-color);
+		background: map-get($button-options, background-hover-color);
+		//background: linear-gradient(to right, map-get($button-options, background-hover-color) 25%, darken( map-get($button-options, background-hover-color), $darken) 100%);
+		transform: translate3d(map-get($button-options, x), map-get($button-options, y), 0) scale3d(map-get($button-options, scale) , map-get($button-options, scale), 1);
+	}
+
+	&:active,
+	&:focus {
+		color: map-get($button-options, text-color);
+		background: map-get($button-options, background-color);
+	}
+
+	&-outline {
+
+		color: map-get($button-options, background-color);
+		border: medium solid map-get($button-options, background-color);
+		background: transparent;
+		box-shadow: none;
+		transform: none;
+
+		&:hover,
+		&.is-active,
+		&.is-touch {
+			color: map-get($button-options, text-color);
+			//border-color: map-get($button-options, background-hover-color);
+			background: map-get($button-options, background-color);
+			//background: linear-gradient(to right, map-get($button-options, background-hover-color) 25%, darken( map-get($button-options, background-hover-color), $darken) 100%);
+			box-shadow: none;
+			transform: none;
+		}
+
+	}
+
+	&-reverse {
+
+		color: map-get($button-options, text-hover-color);
+		//border-bottom: thin solid map-get($button-theme-options, background-color);
+		background: rgba(map-get($button-options, background-hover-color), 1);
+
+		&:hover,
+		&.is-active,
+		&.is-touch {
+			color: map-get($button-options, text-hover-color);
+			background: lighten(map-get($button-options, background-hover-color), 100%);
+		}
+
+	}
+
+}
+
+
+// GROUP
+.button {
+
+	$self: &;
+
+	&-group {
+
+		display: flex;
+		//flex-direction: row;
+		//flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		margin: {
+			top: $gutter;
+			bottom: 2rem;
+		};
+		padding: {
+			left: $gutter;
+			right: $gutter;
+		};
+
+		#{$self} {
+
+			//width: auto;
+			max-width: 100%;
+			margin: {
+				right: $gutter;
+				bottom: $gutter;
+			}
+			font-size: 1em;
+
+			@include break($min: 0, $max: $mobile, $orientation: 'portrait') {
+				margin-right: 0;
+			}
+
+			@include break($min: 0, $max: $mobile, $orientation: 'landscape') {
+				margin-right: 1rem;
+			}
+
+		}
+
+		@include break($min: 0, $max: $mobile, $orientation: 'portrait') {
+			flex-direction: column;
+		}
+
+	}
+
+}
+
+
+// MODIFIERS
+.button {
+
+	$self: &;
+
+	// COLORS
+	@each $name, $color in $colors {
+
+		// DEFAULT
+		&-#{$name} {
+			background: $color;
+		}
+
+
+		// HOVER
+		&-#{$name}-hover:hover {
+			background: $color;
+		}
+
+	}
+
+
+	// SIZES
+	&-small {
+
+		width: 100%;
+		max-width: map-get(map-get($button-options, sizes), small);
+
+		@include break($min: $mobile, $max: $laptop, $orientation: '') {
+			max-width: 50%;
+		}
+
+		@include break($min: 0, $max: $mobile, $orientation: 'both') {
+			max-width: 100%;
+		}
+
+	}
+
+	&-medium {
+		width: 100%;
+		max-width: map-get(map-get($button-options, sizes), medium);
+	}
+
+	&-large {
+		width: 100%;
+		max-width: map-get(map-get($button-options, sizes), large);
+	}
+
+	&-full {
+		width: 100%;
+		max-width: 100%;
+	}
+
+	@include break($min: 0, $max: $mobile, $orientation: 'both') {
+
+		&-small,
+		&-medium,
+		&-large {
+			width: 100%;
+			max-width: 100%;			
+		}
+
+		&-expand {
+			margin: {
+				left: auto;
+				right: auto;
+			}
+			width: 100%;
+			max-width: 100%;
+		}
+
+	}
+
+
+	// STATE
+	&.disabled {
+		cursor: not-allowed;
+		pointer-events: none;
+		color: $light-gray;
+		border-color: $gray;
+		background: $gray;
+	}
+
+	@include break($min: 0, $max: $mobile, $orientation: 'both') {
+		margin: {
+			left: auto;
+			right: auto;
+		}
+		width: 100%;
+		max-width: 100%;
+	}
+	
+}
+
+
+// LOGIC
+@if map-get($button-options, use-shadows) == false {
+
+	.button {
+
+		box-shadow: 0;
+		filter: drop-shadow(0 0 0 $shadow);
+
+		&:hover,
+		&.is-active,
+		&.is-touch {
+			box-shadow: 0;
+			filter: drop-shadow(0 0 0 $shadow);
+		}
+
+	}
+
+}
+
+@if map-get($button-options, truncate) == true {
+
+	.button {
+
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+
+		&-label {
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+
+	}
+
+}

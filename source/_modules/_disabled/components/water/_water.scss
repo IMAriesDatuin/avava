@@ -1,0 +1,26 @@
+/* -------------------------------------------------- */
+/* WATER
+/* -------------------------------------------------- */
+
+// OPTIONS
+$water: (
+	text-color: $primary,
+	text-hover-color: $white,
+	active-text-color: $black,
+	background-color: $white,
+	background-hover-color: $primary,
+	active-background-color: $white,
+	duration: 800ms, // Set the duration of the animation.
+	delay: 0, // Delay the animation by this amount. 
+	ease: $easeNatural // Set the easing type for this animation.
+);
+
+
+// MAIN
+.water {
+
+	$self: &;
+
+	filter: url('#svg-filter-water');
+
+}
