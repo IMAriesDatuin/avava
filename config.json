@@ -46,7 +46,7 @@
 		"icons": {
 
 			"master": "assets/icon.png",
-			"path": "",
+			"path": "avava/build/",
 
 			"favicon": {
 				"default": "favicon.ico",

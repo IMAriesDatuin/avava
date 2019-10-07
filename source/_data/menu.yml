@@ -30,13 +30,6 @@ content:
 
 
  -
-  id: 'news'
-  title: 'News'
-  description: ''
-  link: '#'
-
-
- -
   id: 'careers'
   title: 'Careers'
   description: ''
