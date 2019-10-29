@@ -24,7 +24,7 @@ workbox.clientsClaim();
 self.__precacheManifest = [
   {
     "url": "about-us.html",
-    "revision": "fd1466b11a4465c3c7ec526f36f89726"
+    "revision": "c1054ce8f1c91373e7e63b245976f8b3"
   },
   {
     "url": "android-chrome-192x192.png",
@@ -49,6 +49,10 @@ self.__precacheManifest = [
   {
     "url": "apple-touch-icon.webp",
     "revision": "928e09f4af4f6fb9485badb2d04103a9"
+  },
+  {
+    "url": "assets/blank.png",
+    "revision": "9529390786a6bfeb4ea5197a39d2e410"
   },
   {
     "url": "assets/blank.svg",
@@ -535,6 +539,14 @@ self.__precacheManifest = [
     "revision": "a1d3e970228ec81b24bb3f0b1a833c0f"
   },
   {
+    "url": "assets/leadership/craig-drill.jpg",
+    "revision": "5aac776f8cb09f6df36cf7ccdab556e9"
+  },
+  {
+    "url": "assets/leadership/craig-drill.webp",
+    "revision": "a6a7233e8016ebc6478f4a177c3cfb5d"
+  },
+  {
     "url": "assets/leadership/Dr_Henry_Chan_on_Full_White_Gown_Photo.jpg",
     "revision": "54a568dccca9a0887b3a7fabc3f1618e"
   },
@@ -656,11 +668,11 @@ self.__precacheManifest = [
   },
   {
     "url": "careers.html",
-    "revision": "108d324b37ab3f32d10db383b4fbf42c"
+    "revision": "5a24f3d26ff6a128fc1d5b3b541d6fea"
   },
   {
     "url": "error.html",
-    "revision": "4a0ba57eec6c2158336662bf92f58072"
+    "revision": "763d9858042205957fff32ab8c81f67b"
   },
   {
     "url": "favicon-16x16.png",
@@ -680,15 +692,15 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "cfb621345b73eb16088ed0e37bf86320"
+    "revision": "c8a9851c74b8b71d5f11e9f2e40d789c"
   },
   {
     "url": "legal.html",
-    "revision": "428ef9cf1be8177a04f892183341bd07"
+    "revision": "4be86f9cfa08a1ada302b7ea649de057"
   },
   {
     "url": "management.html",
-    "revision": "a9292df1fec466ae717287142470a205"
+    "revision": "7ddac941aa8290a087039e441b52c645"
   },
   {
     "url": "mstile-144x144.png",
@@ -731,6 +743,10 @@ self.__precacheManifest = [
     "revision": "a88ad367b6266fbca9b373f85a08e79a"
   },
   {
+    "url": "safari-pinned-tab.png",
+    "revision": "7eaf1d51cde422dd32fbd906a6f9adff"
+  },
+  {
     "url": "safari-pinned-tab.svg",
     "revision": "185f5fe11d2ff51bccc5e119f25437f9"
   },
@@ -739,20 +755,20 @@ self.__precacheManifest = [
     "revision": "3a6f30b168df486a976f93bb4f844892"
   },
   {
-    "url": "scripts/app.db72c05a38.css",
-    "revision": "c8d2a85af4a071460f82538ea51f498a"
+    "url": "scripts/app.a44af1c2b8.css",
+    "revision": "4baa46795724d73525ef9037c718012b"
   },
   {
-    "url": "scripts/b.5fbf64c8a8.app.js",
-    "revision": "479255e9e2048134b386ec6287caa5de"
+    "url": "scripts/b.8fe9179f40.app.js",
+    "revision": "4f9e82eb65c9dfe7961c0099482ec5e8"
   },
   {
     "url": "technology.html",
-    "revision": "a6379e3b208c8973274d47159dea94c4"
+    "revision": "3717afff32a12e609da0357a17975934"
   },
   {
     "url": "vision.html",
-    "revision": "dd1a2e72f1a97587a26392e74cdde8ef"
+    "revision": "f5012361df7469d6da14a6ef47c0d9cc"
   },
   {
     "url": "webfonts/fa-brands-400.eot",

@@ -80,10 +80,10 @@ import postCSSAutoprefixer from 'autoprefixer'; // Adds vendor prefixes using da
 import postCSSCombineDuplicatedSelectors from 'postcss-combine-duplicated-selectors'; // Combine similar CSS selectors.
 import postCSSMediaQueries from 'css-mqpacker'; // Combine and re-order media queries.
 import purgecss from 'gulp-purgecss'; // Removes unused CSS in production files. Note: This will enable ':hover' states on touch devices.
-import scss from 'gulp-sass'; // Compile SASS files.
+import sass from 'gulp-sass'; // Compile SASS files.
 import sassCompiler from 'node-sass'; // SASS Compiler.
-import scssGlob from 'gulp-sass-glob'; // Glob imports for SASS.
-import scssLint from 'gulp-sass-lint'; // Detect errors and potential problems in SCSS syntax.
+import sassGlob from 'gulp-sass-glob'; // Glob imports for SASS.
+import sassLint from 'gulp-sass-lint'; // Detect errors and potential problems in SASS syntax.
 
 
 // ASSET
@@ -493,9 +493,9 @@ export const robots = () => {
 
 	return gulp.src([paths.build + '**/*.{html,php}'])
 			   .pipe(robotstxt({
-			   				 useragent: config.robots.useragent,
-			   				 //allow: config.robots.allow,
-			   				 disallow: config.robots.disallow,
+			   				 useragent: config.site.robots.useragent,
+			   				 //allow: config.site.robots.allow,
+			   				 disallow: config.site.robots.disallow,
 			   				 sitemap: config.site.url + '/sitemap.xml'
 			   }))
 			   .pipe(gulp.dest( paths.build ));
@@ -660,7 +660,7 @@ export const combinevendorsjs = () => {
 
 				// Generate sourcemaps.
 				.pipe(_if( config.js.sourcemaps, sourcemaps.init() ))
-				.pipe(concat(config.js.vendorsBundle + '.js'))
+				.pipe(concat('a.' + config.js.vendorsBundle + '.js'))
 
 
 				// Initialize 'gulp-rev' module.
@@ -713,7 +713,7 @@ export const combineappjs = () => {
 
 				// Generate sourcemaps.
 				.pipe(_if( config.js.sourcemaps, sourcemaps.init() ))
-				.pipe(concat(config.js.appBundle + '.js'))
+				.pipe(concat('b.' + config.js.appBundle + '.js'))
 
 
 				// Initialize 'gulp-rev' module.
@@ -810,7 +810,7 @@ export const libsjs = (done) => {
 /* CSS
 /* -------------------------------------------------- */
 
-// SCSS
+// SASS
 export const css = () => {
 
 	console.log(`Compiling ${config.css.bundle}.css...`);
@@ -824,15 +824,15 @@ export const css = () => {
 			   .pipe(_if( config.css.sourcemaps, sourcemaps.init() ))
 
 
-			   // Let the scss compiler do its thang.
-			   .pipe(_if( config.css.lint, scssLint({
+			   // Let the sass compiler do its thang.
+			   .pipe(_if( config.css.lint, sassLint({
 													   options: { formatter: 'stylish', 'merge-default-rules': false },
 													   files: { ignore: paths.source + paths.css + 'plugins/**/*' }
 			   }) ))
-			   .pipe(_if( config.css.lint, scssLint.format() ))
-			   .pipe(_if( config.css.lint, scssLint.failOnError() ))
-			   .pipe(scssGlob( { ignorePaths: [ ] } ))
-			   .pipe(scss({ outputStyle: null, trace: true, verbose: true }).on('error', scss.logError))
+			   .pipe(_if( config.css.lint, sassLint.format() ))
+			   .pipe(_if( config.css.lint, sassLint.failOnError() ))
+			   .pipe(sassGlob( { ignorePaths: [ ] } ))
+			   .pipe(sass({ outputStyle: null, trace: true, verbose: true }).on('error', sass.logError))
 			   .pipe(postCSS(postCSSPlugins))
 
 
@@ -869,15 +869,15 @@ export const tempcss = () => {
 
 	return gulp.src( paths.source + paths.css + config.css.bundle + '.s+(a|c)ss', { base: null, allowEmpty: true } )
 
-			   // Let the scss compiler do its thang.
-			   .pipe(_if( config.css.lint, scssLint({
+			   // Let the sass compiler do its thang.
+			   .pipe(_if( config.css.lint, sassLint({
 													   options: { formatter: 'stylish', 'merge-default-rules': false },
 													   files: { ignore: paths.source + paths.css + 'plugins/*/**' }
 			   }) ))
-			   .pipe(_if( config.css.lint, scssLint.format() ))
-			   .pipe(_if( config.css.lint, scssLint.failOnError() ))
-			   .pipe(scssGlob( { ignorePaths: [ ] } ))
-			   .pipe(scss({ outputStyle: null, trace: true, verbose: true }).on('error', scss.logError))
+			   .pipe(_if( config.css.lint, sassLint.format() ))
+			   .pipe(_if( config.css.lint, sassLint.failOnError() ))
+			   .pipe(sassGlob( { ignorePaths: [ ] } ))
+			   .pipe(sass({ outputStyle: null, trace: true, verbose: true }).on('error', sass.logError))
 			   .pipe(postCSS(postCSSPlugins))
 
 			   //.pipe(_if( production && config.optimizations.css.minify, purgecss(purgeCSSOptions) ))
@@ -1623,7 +1623,7 @@ export const completed = (done) => {
 export const configwarning = () => {
 
 	console.log(`\n\n\n`);
-	//console.log(`Your gulpfile.babel.js, ${files.config}, and/or ${files.framework} has been modified. You must quit your current development session and run 'gulp test' again in order to load your new tasks and configuration file settings.`);
+	console.log(`Your gulpfile.babel.js, ${files.config}, and/or ${files.framework} has been modified. You must quit your current development session and run 'gulp test' again in order to load your new tasks and configuration file settings.`);
 	console.log(`\n\n\n`);
 
 	//return done();
@@ -1745,7 +1745,7 @@ export const reload = (done) => {
 /* -------------------------------------------------- */
 
 // TEST
-gulp.task('test', gulp.series(clearcache, version, mode, backup, clear, html, injectwebfontloader, lintjs, libsjs, frameworkjs, vendorsjs, appjs, combinevendorsjs, combineappjs, css, injectscripts, move, appicons, meta, zipassets, a11ycheck, optimizeassets, clean, sync));
+gulp.task('test', gulp.series(clearcache, version, mode, backup, clear, html, injectwebfontloader, lintjs, libsjs, frameworkjs, vendorsjs, appjs, combinevendorsjs, combineappjs, css, injectscripts, move, appicons, meta, zipassets, a11ycheck, optimizeassets, sitemap, clean, sync));
 
 
 // BUILD

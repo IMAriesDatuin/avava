@@ -144,7 +144,7 @@ $parallax-carousel-options: (
 				$order: -1,
 				$prefix: '',
 				$suffix: '::after',
-				$is-fixed: false,
+				$fixed: false,
 				$clickable: true
 			);
 			//left: -1px;
@@ -161,7 +161,7 @@ $parallax-carousel-options: (
 				$order: -1,
 				$prefix: '',
 				$suffix: '::after',
-				$is-fixed: false,
+				$fixed: false,
 				$clickable: true
 			);
 			//right: -1px;
@@ -206,7 +206,7 @@ $parallax-carousel-options: (
 				$order: 1,
 				$prefix: '',
 				$suffix: '::before',
-				$is-fixed: false,
+				$fixed: false,
 				$clickable: true
 			);
 			left: -1px;
@@ -230,7 +230,7 @@ $parallax-carousel-options: (
 				$order: 1,
 				$prefix: '',
 				$suffix: '::before',
-				$is-fixed: false,
+				$fixed: false,
 				$clickable: true
 			);
 			right: -1px;
@@ -318,7 +318,7 @@ $parallax-carousel-options: (
 				height: 50%;
 				border-radius: 100%;
 				background: $secondary;
-				transform: translate(-50%,-50%) scale3d(0,0,1);
+				transform: translate(-50%, -50%) scale3d(0, 0, 1);
 			}
 
 			&.is-selected {
@@ -327,7 +327,7 @@ $parallax-carousel-options: (
 				//background: $primary;
 
 				&::before {
-					transform: translate(-50%,-50%) scale3d(1,1,1);
+					transform: translate(-50%, -50%) scale3d(1, 1, 1);
 				}
 
 			}

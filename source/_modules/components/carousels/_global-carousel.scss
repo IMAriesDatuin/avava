@@ -31,7 +31,7 @@ $carousel-options: (
 			@include transition(
 				$property: (height),
 				$duration: map-get($carousel-options, duration),
-				$delay: 100ms,
+				$delay: map-get($carousel-options, ease) / 2,
 				$ease: map-get($carousel-options, ease),
 				$optimize: false
 			);
@@ -69,7 +69,7 @@ $carousel-options: (
 		width: 100%;
 		height: 100%;
 		background: $white;
-		transform: scale3d(1,1,1);
+		transform: scale3d(1, 1, 1);
 		transform-origin: right center;
 
 	}
@@ -93,7 +93,7 @@ $carousel-options: (
 	&.is-loaded {
 
 		&::before {
-			transform: scale3d(0,1,1);
+			transform: scale3d(0, 1, 1);
 		}
 
 		img {
@@ -106,8 +106,10 @@ $carousel-options: (
 	&.flickity-lazyerror {
 		width: 100%;
 		height: 1080px;
-		background-image: url(../assets/error-static.gif);
-		background-repeat: repeat;
+		background: {
+			image: url(../assets/error-static.gif);
+			repeat: repeat;
+		}
 	}
 
 }

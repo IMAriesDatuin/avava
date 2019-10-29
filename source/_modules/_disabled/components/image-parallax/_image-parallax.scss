@@ -21,7 +21,7 @@ $image-parallax-options: (
 		$order: 1,
 		$prefix: '',
 		$suffix: '::before',
-		$is-fixed: false,
+		$fixed: false,
 		$clickable: false
 	);
 	overflow: hidden;

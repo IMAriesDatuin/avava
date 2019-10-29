@@ -57,7 +57,7 @@ $navbar-options: (
 		background-alt-color: transparent,
 		background-active-color: transparent, // Set the active state color when the menu is open.
 
-		size: 0.3em, // Set the size of the menu toggle icon.
+		size: 0.5em, // Set the size of the menu toggle icon.
 		thickness: 0.25em, // Defines the thickness of lines.
 		radius: 0, // Defines the roundness of lines.
 		duration: 200ms, // Set the duration of the animation.
@@ -164,7 +164,7 @@ $navbar-options: (
 				top: 0;
 				bottom: 0;
 			}
-			transform: translate3d(0,0,0);
+			transform: translate3d(0, 0, 0);
 
 			.logo {
 				
@@ -221,6 +221,7 @@ $navbar-options: (
 
 			ul {
 
+				display: inline-flex;
 				height: 100%;
 
 				li {
@@ -245,14 +246,15 @@ $navbar-options: (
 
 					a {
 						z-index: 1;
+						overflow: hidden;
 						display: block;
 						position: relative;
 						padding: 1.5rem;
 						color: inherit;
 						font: map-get(map-get($navbar-options, menu), font);
 						font-size: 1em;
-						letter-spacing: 0.125em;
-						text-transform: normal;
+						text-overflow: ellipsis;
+						white-space: nowrap;
 					}
 
 					&::after {
@@ -272,7 +274,9 @@ $navbar-options: (
 						width: 0;
 						height: 100%;
 						background: linear-gradient(to bottom, rgba(map-get(map-get($navbar-options, menu), text-alt-color), 1) 0%, rgba(map-get(map-get($navbar-options, menu), text-alt-color), 0.5) 100%);
-						transform: translateX(-50%) scale3d(1,1,1) skewX(20deg);
+						transform:	translateX(-50%)
+									scale3d(1, 1, 1)
+									skewX(20deg);
 						transform-origin: center center;
 					}
 
@@ -288,7 +292,9 @@ $navbar-options: (
 						&::after {
 							opacity: 1;
 							width: 100%;
-							transform: translateX(-50%) scale3d(1,1,1) skewx(20deg);
+							transform:	translateX(-50%)
+										scale3d(1, 1, 1)
+										skewx(20deg);
 						}
 
 					}
@@ -431,7 +437,8 @@ $navbar-options: (
 					border-radius: 100%;
 					border: map-get(map-get($navbar-options, menu-toggle), thickness) solid map-get(map-get($navbar-options, menu-toggle), border-color);
 					background: map-get(map-get($navbar-options, menu-toggle), background-color);
-					transform: translateX(-50%) translateY(-50%);
+					transform:	translateX(-50%)
+								translateY(-50%);
 				}
 
 			}
@@ -464,7 +471,7 @@ $navbar-options: (
 				width: 100%;
 				color: map-get(map-get($navbar-options, menu-toggle), color);
 				font: map-get(map-get($navbar-options, menu-toggle), font);
-				font-size: 0.825em;
+				font-size: 1em;
 				letter-spacing: normal;
 				text-align: right;
 				text-overflow: ellipsis;
@@ -685,7 +692,7 @@ $navbar-options: (
 
 			@if map-get($navbar-options, show-on-page-end) == true {
 
-				transform: translate3d(0,0,0);
+				transform: translate3d(0, 0, 0);
 				
 			} @else {
 
@@ -702,7 +709,7 @@ $navbar-options: (
 		&.is-scrolling-up {
 
 			@if map-get($navbar-options, show-on-scrolling-up) == true {
-				transform: translate3d(0,0,0);
+				transform: translate3d(0, 0, 0);
 			}
 
 		}
@@ -795,7 +802,7 @@ $navbar-options: (
 
 
 			&.is-top {
-				transform: translate3d(0,0,0);
+				transform: translate3d(0, 0, 0);
 				//max-height: map-get($navbar-options, height) * 1.5;
 			}
 
@@ -825,7 +832,7 @@ $navbar-options: (
 			&.is-bottom {
 
 				@if map-get($navbar-options, show-on-page-end) == true {
-					transform: translate3d(0,0,0);
+					transform: translate3d(0, 0, 0);
 					//max-height: map-get($navbar-options, height) * 1.5;
 				}
 
@@ -1039,7 +1046,9 @@ $navbar-options: (
 
 							&::after {
 								opacity: 1;
-								transform: translateX(-50%) scale3d(1,1,1) skewx(20deg);
+								transform:	translateX(-50%)
+											scale3d(1, 1, 1)
+											skewx(20deg);
 							}
 
 						}
@@ -1354,12 +1363,12 @@ $navbar-options: (
 
 	50% {
 		opacity: 0;
-		transform: translate3d(10%,0,0);
+		transform: translate3d(10%, 0, 0);
 	}
 
 	100% {
 		opacity: 1;
-		transform: translate3d(0,0,0);
+		transform: translate3d(0, 0, 0);
 	}
 
 }
@@ -1373,12 +1382,12 @@ $navbar-options: (
 
 	50% {
 		opacity: 0;
-		transform: translate3d(10%,0,0);
+		transform: translate3d(10%, 0, 0);
 	}
 
 	100% {
 		opacity: 1;
-		transform: translate3d(0,0,0);
+		transform: translate3d(0, 0, 0);
 	}
 
 }

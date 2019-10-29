@@ -114,11 +114,6 @@ var modules = (function modules($, window, document, undefined) {
 		/* COMPONENTS
 		/* -------------------------------------------------- */
 
-		//hero.init();
-		//icon.init();
-		//pages.init();
-
-
 		if ($('.carousel').length) { 
 			globalCarousel.init('.carousel');
 			parallaxCarousel.init('.parallax-carousel');
@@ -131,7 +126,7 @@ var modules = (function modules($, window, document, undefined) {
 
 		if (!isTouch) {
 			//cursor.init();
-			magnetic.init();
+			//magnetic.init();
 		}
 
 

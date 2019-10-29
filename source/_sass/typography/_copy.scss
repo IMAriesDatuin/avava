@@ -1,0 +1,131 @@
+/* -------------------------------------------------- */
+/* FONT FAMILIES
+/* -------------------------------------------------- */
+
+h1, .headline {
+	font: {
+		family: map-get(map-get($fonts, headline), family);
+		style: map-get(map-get($fonts, headline), style);
+		variant: map-get(map-get($fonts, headline), variant);
+		weight: map-get(map-get($fonts, headline), weight);
+	}
+}
+
+h2, h3, h4, h5, h6, .subheadline {
+	font: {
+		family: map-get(map-get($fonts, subheadline), family);
+		style: map-get(map-get($fonts, subheadline), style);
+		variant: map-get(map-get($fonts, subheadline), variant);
+		weight: map-get(map-get($fonts, subheadline), weight);
+	}
+}
+
+p, .copy {
+	margin: {
+		top: 0;
+		bottom: map-get(map-get($fonts, copy), margin);
+	}
+	font: {
+		family: map-get(map-get($fonts, copy), family);
+		size: map-get(map-get($fonts, copy), size);
+		style: map-get(map-get($fonts, copy), style);
+		variant: map-get(map-get($fonts, copy), variant);
+		weight: map-get(map-get($fonts, copy), weight);
+	}
+	letter-spacing: map-get(map-get($fonts, copy), letter-spacing);
+	//line-height: map-get(map-get($fonts, copy), line-height);
+	white-space: pre-line;
+}
+
+.font-stack {
+	font: {
+		family: map-get(map-get($fonts, stack), family);
+		style: map-get(map-get($fonts, stack), style);
+		variant: map-get(map-get($fonts, stack), variant);
+		weight: map-get(map-get($fonts, stack), weight);
+	}
+}
+
+.font-icon {
+	font: $font-icon;
+}
+
+//
+/* -------------------------------------------------- */
+/* HEADLINE
+/* -------------------------------------------------- */
+
+@for $i from 1 through 6 {
+
+	h#{7 - $i}, .h#{7 - $i} {
+
+		margin: {
+			top: 0;
+			bottom: map-get(map-get($fonts, headline), margin);
+		}
+		font-size: $i * strip-unit( map-get($fonts, scale) ) * 0.75 + em;
+
+		@if map-get(map-get($fonts, headline), line-height) == strip-unit(1) or map-get(map-get($fonts, headline), line-height) == 1.6 {
+
+			line-height: map-get(map-get($fonts, headline), line-height);
+
+		} @else {
+
+			line-height: $i * strip-unit( map-get(map-get($fonts, headline), line-height) ) + em;
+
+		}
+
+		//line-height: round( pxtoem($font-size / 2 * 0.5, $basepx) );
+
+	}
+
+}
+
+
+/* -------------------------------------------------- */
+/* COPY
+/* -------------------------------------------------- */
+
+@for $i from 1 through 6 {
+
+	.p#{7 - $i} {
+
+		margin: {
+			top: 0;
+			bottom: map-get(map-get($fonts, headline), margin);
+		}
+		font-size: $i * strip-unit( map-get($fonts, scale) ) * 0.75 + em;
+
+	}
+
+}
+
+
+/* -------------------------------------------------- */
+/* LOGIC
+/* -------------------------------------------------- */	
+
+h1, h2, h3, h4, h5, h6, .headline:not([class*='text-left']):not([class*='text-right']):not([class*='text-center']):not([class*='text-justify']) {
+
+	@if map-get($fonts, headline-alignment-on-mobile) != false {
+
+		@include break($min: 0, $max: $mobile, $orientation: 'both') {
+			text-align: map-get($fonts, headline-alignment-on-mobile);
+		}
+
+	}
+
+}
+
+p, .text-column {
+
+	@if map-get($fonts, copy-alignment-on-mobile) != false {
+
+		@include break($min: 0, $max: $mobile, $orientation: 'both') {
+			text-align: map-get($fonts, copy-alignment-on-mobile);
+		}
+
+	}
+
+
+}

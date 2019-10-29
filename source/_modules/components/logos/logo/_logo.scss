@@ -40,7 +40,7 @@
 	}
 
 	&-text {
-		@extend .fix-font-render;
+		@include fix-font-render;
 		//overflow: hidden;
 		height: auto !important;
 	}

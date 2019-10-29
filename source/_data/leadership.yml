@@ -3,8 +3,8 @@
 content:
  -
   id: ''
-  image: 'assets/leadership/IMG_2198.jpg'
-  webp: 'assets/leadership/IMG_2198.webp'
+  image: 'assets/leadership/craig-drill.jpg'
+  webp: 'assets/leadership/craig-drill.webp'
   name: 'Craig Drill'
   title: 'Chairman of the Board'
   copy: 'Craig Drill has over 40 years of experience in the finance and business realm. With a Princeton and Harvard business education, prestigious roles at world-class financial institutions and 30+ years of leading his own investment firm at Craig Drill Capital, AVAVA is proud to list Mr. Drill among our advisors, backers and visionaries.'
@@ -19,11 +19,11 @@ content:
 
  -
   id: ''
-  image: 'assets/leadership/Blossom_0213_vert_crop.jpg'
-  webp: 'assets/leadership/Blossom_0213_vert_crop.webp'
-  name: 'Dr. Dieter Manstein'
+  image: 'assets/leadership/Blossom_0560_vert.jpg'
+  webp: 'assets/leadership/Blossom_0560_vert.webp'
+  name: 'Dr. Richard Rox Anderson'
   title: 'Board Advisor/Founder'
-  copy: 'Dr. Dieter Manstein is a clinician-researcher with an MGH-based laboratory specializing in energy-based dermatological treatments. His laboratory is also part of MGH’s world-class Cutaneous Biology Research Center. He is also an Assistant Professor of Dermatology at Harvard Medical School. He has a longstanding history of successful collaborations with other members of the AVAVA team, including partnering with Dr. Anderson in the creation of CoolSculpting.'
+  copy: 'Dr. R. Rox Anderson is a dermatologist and entrepreneur with a long history of breakthroughs in laser skin treatments. His innovations include CoolSculpting, laser hair removal; laser treatments for port-wine stains; and research in laser treatments for acne, cellulite and atherosclerosis. He is a Professor of Dermatology at Harvard Medical School and the Director of the Wellman Center for Photomedicine at Massachusetts General Hospital (MGH).'
   social:
     -
       icon: linkedin
@@ -37,6 +37,19 @@ content:
   name: 'Dr. Henry Chan'
   title: 'Board Member/Founder'
   copy: 'Dr. Henry Chan is an expert clinician-researcher with a focus on dermatology and medicine. He is an Honorary Clinical Professor in the Department of Medicine at the University of Hong Kong. He also currently works alongside AVAVA co-founder Dr. Rox Anderson as a visiting scientist at MGH’s Wellman Center for Photomedicine.'
+  social:
+    -
+      icon: linkedin
+      link: https://www.linkedin.com
+
+
+ -
+  id: ''
+  image: 'assets/leadership/Blossom_0213_vert_crop.jpg'
+  webp: 'assets/leadership/Blossom_0213_vert_crop.webp'
+  name: 'Dr. Dieter Manstein'
+  title: 'Board Advisor/Founder'
+  copy: 'Dr. Dieter Manstein is a clinician-researcher with an MGH-based laboratory specializing in energy-based dermatological treatments. His laboratory is also part of MGH’s world-class Cutaneous Biology Research Center. He is also an Assistant Professor of Dermatology at Harvard Medical School. He has a longstanding history of successful collaborations with other members of the AVAVA team, including partnering with Dr. Anderson in the creation of CoolSculpting.'
   social:
     -
       icon: linkedin
@@ -77,24 +90,11 @@ content:
 
  -
   id: ''
-  image: 'assets/leadership/Blossom_0560_vert.jpg'
-  webp: 'assets/leadership/Blossom_0560_vert.webp'
-  name: 'Dr. Richard Rox Anderson'
-  title: 'Board Advisor/Founder'
-  copy: 'Dr. R. Rox Anderson is a dermatologist and entrepreneur with a long history of breakthroughs in laser skin treatments. His innovations include CoolSculpting, laser hair removal; laser treatments for port-wine stains; and research in laser treatments for acne, cellulite and atherosclerosis. He is a Professor of Dermatology at Harvard Medical School and the Director of the Wellman Center for Photomedicine at Massachusetts General Hospital (MGH).'
-  social:
-    -
-      icon: linkedin
-      link: https://www.linkedin.com
-
-
- -
-  id: ''
-  image: 'assets/leadership/Blossom_0048_vert_crop.jpg'
-  webp: 'assets/leadership/Blossom_0048_vert_crop.webp'
-  name: 'Jenifer Perry, MBA'
-  title: 'Executuve Director, Finance/Operations'
-  copy: 'Jennifer Perry specializes in finance and operations in the healthcare field. She has held positions at both Thomson Reuters in the Healthcare sector and at Partners HealthCare. She also currently serves as the Executive Director of Finance and Operations at Blossom Innovations, LLC. She brings a keen working knowledge of best healthcare business practices to the AVAVA team.'
+  image: 'assets/leadership/avatar.jpg'
+  webp: 'assets/leadership/avatar.webp'
+  name: 'Lew Levine'
+  title: 'Executuve Director, Engineering'
+  copy: 'Lew Levine specializes in several aspects of research, development and production of medical devices. With previous positions at top medical device companies and as a private consultant, Mr. Levine’s expertise will play a key role as we bring AVAVA to life.'
   social:
     -
       icon: linkedin
@@ -122,11 +122,11 @@ content:
 
  -
   id: ''
-  image: 'assets/leadership/avatar.jpg'
-  webp: 'assets/leadership/avatar.webp'
-  name: 'Lew Levine'
-  title: 'Executuve Director, Engineering'
-  copy: 'Lew Levine specializes in several aspects of research, development and production of medical devices. With previous positions at top medical device companies and as a private consultant, Mr. Levine’s expertise will play a key role as we bring AVAVA to life.'
+  image: 'assets/leadership/Blossom_0048_vert_crop.jpg'
+  webp: 'assets/leadership/Blossom_0048_vert_crop.webp'
+  name: 'Jenifer Perry, MBA'
+  title: 'Executuve Director, Finance/Operations'
+  copy: 'Jennifer Perry specializes in finance and operations in the healthcare field. She has held positions at both Thomson Reuters in the Healthcare sector and at Partners HealthCare. She also currently serves as the Executive Director of Finance and Operations at Blossom Innovations, LLC. She brings a keen working knowledge of best healthcare business practices to the AVAVA team.'
   social:
     -
       icon: linkedin

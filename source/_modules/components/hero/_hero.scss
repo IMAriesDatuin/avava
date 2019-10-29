@@ -87,7 +87,6 @@ $hero-options: (
 						$optimize: false
 					);
 					//color: $primary;
-					font-size: 1.75em;
 					letter-spacing: 0;
 
 					&-title {
@@ -141,7 +140,7 @@ $hero-options: (
 					$order: 1,
 					$prefix: '',
 					$suffix: '::before',
-					$is-fixed: false,
+					$fixed: false,
 					$clickable: false
 				);
 				position: relative;
@@ -166,7 +165,7 @@ $hero-options: (
 
 					.headline, p {
 						opacity: 1;
-						transform: translate3d(0,0,0);
+						transform: translate3d(0, 0, 0);
 					}
 
 					.button {

@@ -46,7 +46,7 @@
 		"icons": {
 
 			"master": "assets/icon.png",
-			"path": "avava/build/",
+			"path": "",
 
 			"favicon": {
 				"default": "favicon.ico",
@@ -100,6 +100,12 @@
 			"viewportFit": "cover"
 		},
 
+		"robots": {
+			"useragent": "*",
+			"allow": [""],
+			"disallow": ["/assets/", "/cgi-bin/", "/downloads/", "/fonts/", "/scripts/"]
+		},
+
 		"serviceworker": true,
 		"appBanner": false,
 
@@ -118,15 +124,10 @@
 		"webfonts": "webfonts/"
 	},
 
-	"accessibility": {
-		"allow": false,
-		"generateReport": false
-	},
-
 	"tracking": {
 
 		"fullstory": {
-			"allow": true,
+			"allow": false,
 			"id": "KMGP5"
 		},
 
@@ -151,12 +152,6 @@
 			"id": "GTM-0000000"
 		}
 
-	},
-
-	"robots": {
-		"useragent": "*",
-		"allow": [""],
-		"disallow": ["/assets/", "/cgi-bin/", "/downloads/", "/fonts/", "/scripts/"]
 	},
 
 	"versioning": {
@@ -226,6 +221,10 @@
 
 	},
 
+	"php": {
+		"files": ["components/**/*.php", "includes/**/*.php"]
+	},
+
 	"html": {
 		"files": "_pages/**/*.{html,hbs,handlebars}",
 		
@@ -245,6 +244,9 @@
 			"height": 1080
 		},
 		"html": {
+			"minify": true
+		},
+		"php": {
 			"minify": true
 		},
 		"js": {
@@ -274,14 +276,14 @@
 
 	"css": {
 		"bundle": "app",
-		"source": "_scss/",
+		"source": "_sass/",
 		"lint": true,
 		"sourcemaps": true
 	},
 
 	"js": {
-		"vendorsBundle": "a.vendors",
-		"appBundle": "b.app",
+		"vendorsBundle": "vendors",
+		"appBundle": "app",
 		"lint": true,
 		"sourcemaps": true,
 
@@ -383,6 +385,11 @@
 			"source": "",
 			"files": "_libs/**/*.js"
 		}
+	},
+	
+	"accessibility": {
+		"allow": false,
+		"generateReport": false
 	},
 
 	"zip": {

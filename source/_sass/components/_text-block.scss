@@ -1,0 +1,79 @@
+/* -------------------------------------------------- */
+/* TEXT BLOCK
+/* -------------------------------------------------- */
+
+// OPTIONS
+$text-block-options: (
+	duration: 250ms,
+	delay: 0ms,
+	ease: $easeNatural
+);
+
+
+// MAIN
+.text-block {
+
+	position: relative;
+	padding: {
+		top: $gutter;
+		right: $gutter;
+		bottom: $gutter;
+		left: $gutter;
+	}
+	//width: 50%;
+	//background: $white;
+	//mix-blend-mode: lighten;
+
+	.headline {
+		padding: 0;
+		word-wrap: normal;
+	}
+
+	p {
+
+		padding: 0;
+		white-space: normal;
+
+		&:not(:first-child):not(:last-child) {
+			margin-bottom: 4rem;
+		}
+
+		/*
+		&:last-of-type {
+			padding-bottom: 4rem;
+			border-bottom: thin dotted $gray;
+		}
+		*/
+
+	}
+
+	button, .button {
+
+		width: 100%;
+		max-width: 300px;
+
+		@include break($min: 0, $max: $mobile, $orientation: 'both') {
+			width: 100%;
+			max-width: 100%;
+		}
+
+	}
+
+	@include break($min: 0, $max: $tablet, $orientation: 'portrait') {
+		width: 100%;
+	}
+	
+	@include break($min: 0, $max: $mobile, $orientation: 'portrait') {
+		padding: {
+			top: 0;
+			right: $gutter-mobile;
+			bottom: $gutter-mobile;
+			left: $gutter-mobile;
+		}
+	}
+
+	@include break($min: 0, $max: $mobile, $orientation: 'both') {
+		width: 100%;
+	}
+
+}

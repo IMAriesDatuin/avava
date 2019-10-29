@@ -4,8 +4,11 @@
 
 // OPTIONS
 $gauge-options: (
-	dial-color: $secondary,
-	value-color: $secondary,
+	text-color: $white,
+	foreground-color: $secondary,
+	background-color: $accent,
+	foreground-size: 6,
+	background-size: 4,
 	duration: 800ms,
 	delay: 0ms,
 	ease: $easeNatural
@@ -20,30 +23,31 @@ $gauge-options: (
 	width: 75px;
 	height: 75px;
 
-	/* Do not alter classnames. */
 	&-cluster {
 
-		&-dial {
+		&-text {
+			font: {
+				family: $headline;
+				size: 1.25em;
+			}
+			fill: map-get($gauge-options, text-color);
+		}
+
+		&-foreground {
+			stroke: map-get($gauge-options, foreground-color);
+			stroke: {
+				dasharray: none;
+				width: map-get($gauge-options, foreground-size);
+			}
+			fill: none;
+		}
+
+		&-background {
 			width: 100%;
 			height: 100%;
-			stroke: $accent;
-			stroke-width: 4;
-			fill: rgba(0,0,0,0);
-		}
-
-		&-value-text {
-			fill: $white;
-			font-family: $headline;
-			font-size: 1.25em;
-		}
-
-		&-value {
-			stroke: $secondary;
-			stroke-dasharray: none;
-			stroke-width: 6;
-			fill: rgba(0,0,0,0);
-
-
+			stroke: map-get($gauge-options, background-color);
+			stroke-width: map-get($gauge-options, background-size);
+			fill: none;
 		}
 
 	}

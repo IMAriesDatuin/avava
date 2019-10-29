@@ -5,7 +5,7 @@
 // OPTIONS
 $quotes-options: (
 	duration: 600ms,
-	delay: 0,
+	delay: 0ms,
 	ease: $easeWipe
 );
 
@@ -30,7 +30,7 @@ $quotes-options: (
 
 	.quote {
 
-		@extend .fix-font-render;
+		@include fix-font-render;
 		overflow: visible;
 		position: absolute;
 		left: 50%;

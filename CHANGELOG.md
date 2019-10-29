@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.0.3 preview] - 2019-31-10
+### Added
+- `sitemap` options added to `config.json`.
+- `transpile` and `transpiler` options added to `config.json`.
+
+### Changed
+- Javascript files are now split into `vendors` and `main/app` (can be renamed via `config.json`) js files.
+- Using SASS nomenclature instead of SCSS. This has no affect on the compiler or if files are saved using .scss. The compiler can still process both.
+- Moved `robots` to `site` options `config.json`.
+
+### Fixed
+- `siteVersion` no longer outputs or prints in console.
+- Fixed icon pathing issues.
+- Fixed issues with Babel not transpiling some files properly.
+
+
+
+
+
 ## [1.0.2 preview] - 2019-26-04
 ### Added
 - Video posters will now appear when video is paused or done playing.
